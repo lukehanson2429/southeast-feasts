@@ -15,23 +15,23 @@
     <header>
         <!-- Dropdown Content Navbar -->
         <ul id="dropdown1" class="dropdown-content">
-            <li><a href="#!">All</a></li>
-            <li><a href="#!">Thailand</a></li>
-            <li><a href="#!">Vietnam</a></li>
-            <li><a href="#!">Cambodia</a></li>
-            <li><a href="#!">Laos</a></li>
-            <li><a href="#!">Indonesia</a></li>
-            <li><a href="#!">Malaysia</a></li>
-            <li><a href="#!">Phillipines</a></li>
-            <li><a href="#!">Singapore</a></li>
-            <li><a href="#!">Myanmar</a></li>
+            <li><a href="{{ url_for('get_recipes', country='all') }}">All</a></li>
+            <li><a href="{{ url_for('get_recipes', country='Thailand') }}">Thailand</a></li>
+            <li><a href="{{ url_for('get_recipes', country='Vietnam') }}">Vietnam</a></li>
+            <li><a href="{{ url_for('get_recipes', country='Cambodia') }}">Cambodia</a></li>
+            <li><a href="{{ url_for('get_recipes', country='Laos') }}">Laos</a></li>
+            <li><a href="{{ url_for('get_recipes', country='Indonesia') }}">Indonesia</a></li>
+            <li><a href="{{ url_for('get_recipes', country='Malaysia') }}">Malaysia</a></li>
+            <li><a href="{{ url_for('get_recipes', country='Phillipines') }}">Phillipines</a></li>
+            <li><a href="{{ url_for('get_recipes', country='Singapore') }}">Singapore</a></li>
+            <li><a href="{{ url_for('get_recipes', country='Myanmar') }}">Myanmar</a></li>
         </ul>
         <nav class="nav-extended nav-shadow green accent-3">
             <div class="nav-wrapper">
-                <a href="#!" class="brand-logo">Southeast Feasts</a>
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
+                <a href="{{ url_for('get_home') }}" class="brand-logo">Southeast Feasts</a>
+                <a data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="#">Home</a></li>
+                    <li><a href="{{ url_for('get_home') }}">Home</a></li>
                     <!-- Dropdown Trigger -->
                     <li><a class="dropdown-trigger" data-target="dropdown1">Recipes<i
                                 class="material-icons right"><i class="fas fa-arrow-down fa-xs"></i></i></a></li>
@@ -43,19 +43,19 @@
         </nav>
         <!-- Dropdown Content SideNav -->
 <ul id="dropdown2" class="dropdown-content">
-            <li><a href="#!">All</a></li>
-            <li><a href="#!">Thailand</a></li>
-            <li><a href="#!">Vietnam</a></li>
-            <li><a href="#!">Cambodia</a></li>
-            <li><a href="#!">Laos</a></li>
-            <li><a href="#!">Indonesia</a></li>
-            <li><a href="#!">Malaysia</a></li>
-            <li><a href="#!">Phillipines</a></li>
-            <li><a href="#!">Singapore</a></li>
-            <li><a href="#!">Myanmar</a></li>
+            <li><a href="{{ url_for('get_recipes', country='all') }}">All</a></li>
+            <li><a href="{{ url_for('get_recipes', country='Thailand') }}">Thailand</a></li>
+            <li><a href="{{ url_for('get_recipes', country='Vietnam') }}">Vietnam</a></li>
+            <li><a href="{{ url_for('get_recipes', country='Cambodia') }}">Cambodia</a></li>
+            <li><a href="{{ url_for('get_recipes', country='Laos') }}">Laos</a></li>
+            <li><a href="{{ url_for('get_recipes', country='Indonesia') }}">Indonesia</a></li>
+            <li><a href="{{ url_for('get_recipes', country='Malaysia') }}">Malaysia</a></li>
+            <li><a href="{{ url_for('get_recipes', country='Phillipines') }}">Phillipines</a></li>
+            <li><a href="{{ url_for('get_recipes', country='Singapore') }}">Singapore</a></li>
+            <li><a href="{{ url_for('get_recipes', country='Myanmar') }}">Myanmar</a></li>
         </ul>
   <ul class="sidenav" id="mobile-demo">
-    <li><a href="#">Home</a></li>
+    <li><a href="{{ url_for('get_home') }}">Home</a></li>
                     <!-- Dropdown Trigger -->
                     <li><a class="dropdown-trigger" data-target="dropdown2">Recipes<i
                                 class="material-icons right"><i class="fas fa-arrow-down fa-xs"></i></i></a></li>
