@@ -2,6 +2,9 @@
 
 body {
     font-family: "Be Vietnam", sans-serif;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
 
 .nav-shadow {
@@ -14,3 +17,16 @@ ul.dropdown-content li a {
     text-shadow: none;
 }
 
+
+  main {
+    flex: 1 0 auto;
+  }
+
+
+.social-links li a i {
+    width: 36px;
+    height: 36px;
+    padding: 12px 0;
+    font-size: 24px;
+    line-height: 12px;
+}
