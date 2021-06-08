@@ -37,7 +37,7 @@
                                 class="material-icons right"><i class="fas fa-arrow-down fa-xs"></i></i></a></li>
                     <li><a href="##">Profile</a></li>            
                     <li><a href="###">Add Recipe</a></li>            
-                    <li><a href="####">SignIn/SignUp</a></li>
+                    <li><a href="{{ url_for('sign_up') }}">SignIn/SignUp</a></li>
                     <li><a href="#####">Sign Out</a></li>
                 </ul>
             </div>
@@ -62,10 +62,24 @@
                                 class="material-icons right"><i class="fas fa-arrow-down fa-xs"></i></i></a></li>
                     <li><a href="##">Profile</a></li>            
                     <li><a href="###">Add Recipe</a></li>            
-                    <li><a href="####">SignIn/SignUp</a></li>
+                    <li><a href="{{ url_for('sign_up') }}">SignIn/SignUp</a></li>
                     <li><a href="#####">Sign Out</a></li>
   </ul>
     </header>
+    <section>
+        <!-- flash message-->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                <div class="row flashes">
+                    <div class="col s12 m4 offset-m4">
+                    <h5 class="green accent-3 center-align">{{ message }}</h5>
+                    </div>
+                </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </section>
     <main>
     {% block content %}
     {% endblock %}
