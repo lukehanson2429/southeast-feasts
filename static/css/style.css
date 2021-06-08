@@ -63,9 +63,28 @@ ul.dropdown-content li a {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
+.welcome-img img {
+    height: 40vh;
+    width: 100%;
+    margin-top: 15%;
+}
+
   main {
     flex: 1 0 auto;
   }
+
+.flashes h5 {
+    line-height: 2;
+    border: solid;
+    border-width: 1px;
+    border-radius: 20px;
+    color: #ce3434;
+}
+
+.card-panel {
+      padding: 10px;
+  }
+
 
 .footer-logo img {
     width: 80px;
