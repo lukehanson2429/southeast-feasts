@@ -47,6 +47,33 @@ def sign_up():
         flash("Sign Up Successful!")
     return render_template("signup.html")
 
+
+@app.route("/sign_in", methods=["GET", "POST"])
+def sign_in():
+    if request.method == "POST":
+        # check if username exists
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+
+        if existing_user:
+            # ensure hashed password matches user input
+            if check_password_hash(
+                existing_user["password"], request.form.get("password")):
+                    session["user"] = request.form.get("username").lower()
+                    flash("Welcome, {}".format(request.form.get("username")))
+            else:
+                # invalid password match
+                flash("Incorrect Username and/or Password")
+                return redirect(url_for("sign_in"))
+
+        else:
+            # username doesn't exist
+            flash("Incorrect Username and/or Password")
+            return redirect(url_for("sign_in"))
+
+    return render_template("signin.html")
+
+
 # Return recipe by country
 @app.route("/get_recipes/<country>")
 def get_recipes(country):
