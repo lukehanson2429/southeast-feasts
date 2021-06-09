@@ -28,6 +28,16 @@ ul.dropdown-content li a {
     position: relative;
 }
 
+.sign-bg-img {
+    height: 100vh;
+
+    background: url("../images/signin-up.jpg") no-repeat center center fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
 .logo-box {
     position: relative;
     display: inline-block;
@@ -63,6 +73,19 @@ ul.dropdown-content li a {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
+.opaque-overlay-sign {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.sign-in-form {
+    z-index: 1000;
+}
+
 .welcome-img img {
     height: 40vh;
     width: 100%;
@@ -73,7 +96,7 @@ ul.dropdown-content li a {
     flex: 1 0 auto;
   }
 
-.flashes h5 {
+.flashes {
     line-height: 2;
     border: solid;
     border-width: 1px;
