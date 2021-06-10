@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<div class="sign-bg-img">
+    <div class="opaque-overlay-sign">&nbsp;</div>
+    <div class="container sign-in-form">
+    <div class="row">
+        <form class="col s12 m6 offset-m3">
+            <div class="card-panel">
+                <section>
+        <!-- flash message-->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <h5 class="green accent-3 center-align flashes">{{ message }}</h5>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </section>
+                <h4 class="center-align">Sign In!</h4>
+                <!-- username -->
+                <div class="row">
+					<div class="input-field col s12">
+						<i class="fas fa-user-cog prefix green-text text-accent-3"></i>
+						<input id="username" name="username" type="text" minlength="5" maxlength="15" class="validate" pattern="^[a-zA-Z0-9]{5,15}$" required>
+						<label for="username">Username</label>
+					</div>
+                </div>
+                <!-- passowrd -->
+                <div class="row">
+                    <div class="input-field col s12">
+						<i class="fas fa-user-lock prefix green-text text-accent-3"></i>
+                        <input id="password" name="password" type="password" minlength="5" maxlength="15" class="validate" pattern="^[a-zA-Z0-9]{5,15}$" required>
+                        <label for="password">Password</label>
+                    </div>
+                </div>
+                <!-- log in -->
+                <div class="row">
+                    <button type="submit" class="col s4 offset-s4 btn-large green accent-3 text-shadow">
+                        Sign In! <i class="fas fa-sign-in-alt"></i>
+                    </button>
+                </div>
+                <div class="row">
+                    <div class="col s12">
+                        <p class="center-align">
+                            New to Southeast Feasts?
+                            <a href="{{ url_for('sign_up') }}" class="green-text text-accent-3 text-shadow">Sign Up!</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    </div>
+</div>
+
+{% endblock %}
