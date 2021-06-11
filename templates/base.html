@@ -35,7 +35,7 @@
                     <!-- Dropdown Trigger -->
                     <li><a class="dropdown-trigger" data-target="dropdown1">Recipes<i
                                 class="material-icons right"><i class="fas fa-arrow-down fa-xs"></i></i></a></li>
-                    <li><a href="##">Profile</a></li>            
+                    <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>            
                     <li><a href="###">Add Recipe</a></li>            
                     <li><a href="{{ url_for('sign_in') }}">SignIn/SignUp</a></li>
                     <li><a href="#####">Sign Out</a></li>
@@ -60,12 +60,23 @@
                     <!-- Dropdown Trigger -->
                     <li><a class="dropdown-trigger" data-target="dropdown2">Recipes<i
                                 class="material-icons right"><i class="fas fa-arrow-down fa-xs"></i></i></a></li>
-                    <li><a href="##">Profile</a></li>            
+                    <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>            
                     <li><a href="###">Add Recipe</a></li>            
                     <li><a href="{{ url_for('sign_in') }}">SignIn/SignUp</a></li>
                     <li><a href="#####">Sign Out</a></li>
   </ul>
     </header>
+
+                    <section>
+        <!-- flash message-->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <h5 class="green accent-3 center-align flashes">{{ message }}</h5>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </section>
     <main>
     {% block content %}
     {% endblock %}

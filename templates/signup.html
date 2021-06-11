@@ -7,16 +7,6 @@
     <div class="row">
         <form class="col s12 m6 offset-m3" method="POST" action="{{ url_for('sign_up') }}">
             <div class="card-panel">
-                <section>
-        <!-- flash message-->
-        {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                {% for message in messages %}
-                    <h5 class="green accent-3 center-align flashes">{{ message }}</h5>
-                {% endfor %}
-            {% endif %}
-        {% endwith %}
-    </section>
                 <h4 class="center-align">Sign Up!</h4>
                 <!-- username -->
                 <div class="row">

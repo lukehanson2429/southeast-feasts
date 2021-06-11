@@ -98,10 +98,12 @@ ul.dropdown-content li a {
 
 .flashes {
     line-height: 2;
-    border: solid;
-    border-width: 1px;
-    border-radius: 20px;
     color: #ce3434;
+    margin: 0 auto;
+    border-top: solid;
+    border-width: 1px;
+    border-color: white;
+
 }
 
 .card-panel {
