@@ -7,9 +7,33 @@
         {{ recipe.serves }}<br>
         {{ recipe.image_url }}<br>
         {{ recipe.prep_time }}<br>
+        {{ recipe.cook_time }}<br>
         {{ recipe.ingredients }}<br>
         {{ recipe.method }}<br>
         {{ recipe.recipe_by }}<br>
         {{ recipe.created_date }}<br>
     {% endfor %}
+<div class="container">
+    <div class="row">
+    <div class="col s6 m4">
+      <div class="card">
+          {% for recipe in recipes %}
+        <div class="card-image">
+          <img src="{{ recipe.image_url }}">
+        </div>
+        <h6 class="recipe-name nav-shadow white-text green accent-3">{{ recipe.recipe_name }}</h6>
+        <div class="card-content">
+          <p>Country: {{ recipe.country }}</p>
+          <br>
+          <strong>Recipe By: {{ recipe.recipe_by }}</strong><br>
+          <em>Created date: {{ recipe.created_date }}</em>
+        </div>
+        <div class="card-action">
+          <a href="#">Show me this recipe!</a>
+        </div>
+            {% endfor %}
+      </div>
+    </div>
+  </div>
+  </div>
 {% endblock %}
