@@ -15,7 +15,7 @@
     {% endfor %}
 <div class="container">
     <div class="row">
-    <div class="col s6 m4">
+    <div class="col s6 m3">
       <div class="card">
           {% for recipe in recipes %}
         <div class="card-image">
@@ -28,8 +28,8 @@
           <strong>Recipe By: {{ recipe.recipe_by }}</strong><br>
           <em>Created date: {{ recipe.created_date }}</em>
         </div>
-        <div class="card-action">
-          <a href="#">Show me this recipe!</a>
+        <div class="card-action center-align">
+          <a class="waves-effect waves-light btn-small green accent-3">Recipe</a>
         </div>
             {% endfor %}
       </div>
