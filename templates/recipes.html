@@ -3,7 +3,7 @@
     {% for recipe in recipes %}
         {{ recipe.recipe_name }}<br>
         {{ recipe.country }}<br>
-        {{ recipe.category_name }}<br>
+        {{ recipe.description }}<br>
         {{ recipe.serves }}<br>
         {{ recipe.image_url }}<br>
         {{ recipe.prep_time }}<br>
@@ -25,11 +25,11 @@
         <div class="card-content">
           <p>Country: {{ recipe.country }}</p>
           <br>
-          <strong>Recipe By: {{ recipe.recipe_by }}</strong><br>
+          <strong>Created By: {{ recipe.created_by }}</strong><br>
           <em>Created date: {{ recipe.created_date }}</em>
         </div>
         <div class="card-action center-align">
-          <a class="waves-effect waves-light btn-small green accent-3">Recipe</a>
+          <a class="btn-small green accent-3 nav-shadow">Recipe</a>
         </div>
             {% endfor %}
       </div>
