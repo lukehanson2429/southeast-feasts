@@ -121,7 +121,9 @@ def sign_out():
 
 @app.route("/add_recipe")
 def add_recipe():
-    return render_template("add_recipe.html")
+    countries = mongo.db.countries.find().sort("country", 1)
+    return render_template("add_recipe.html", countries=countries)
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
