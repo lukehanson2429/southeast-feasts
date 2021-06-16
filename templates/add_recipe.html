@@ -4,7 +4,7 @@
  <h3 class="center align">Add Recipe</h3>
 
  <div class="container">
-<div class="row">
+<div class="row card-panel">
     <form class="col s12" method="POST" action="">
       <div class="row">
         <div class="input-field col s12">
@@ -29,12 +29,16 @@
     </select>
     <label>Country</label>
   </div>
-  <div class="input-field col s12">
+  <div class="input-field col s11">
           <i class="fas fa-keyboard prefix green-text text-accent-3"></i>
-          <input id="description" name="description" minlength="5" maxlength="50" 
+          <input id="description" name="description" minlength="5" maxlength="100" 
                 type="text" class="validate" required>
           <label for="description">Description</label>
         </div>
+        <div class="col s1">
+                    <i class="fas fa-info fa-2x tooltipped green-text text-accent-3" data-position="left"
+                        data-tooltip="Short description of the recipe, up to 100 characters inc spaces. As an example the description of a Thai Green Curry could be the following: Thai green curry is a variety of curry from Thailand using coconut milk and fresh green chillies."></i>
+                </div>
         <div class="input-field col s12">
             <i class="fas fa-users prefix green-text text-accent-3"></i>
     <select name="serves">
@@ -110,10 +114,10 @@
                         data-tooltip="Please enter your name or username."></i>
                 </div>
         <div class="input-field col s12">
-          <i class="fas fa-user prefix green-text text-accent-3"></i>
-          <input id="created_date" name="created_date" minlength="5" maxlength="9" 
-                type="text" class="validate" required>
-          <label for="recipe_by">Recipe By</label>
+          <i class="fas fa-calendar-day prefix green-text text-accent-3"></i>
+          <input id="created_date" name="created_date"
+                type="text" class="validate datepicker" required>
+          <label for="created_date">Created Date</label>
         </div>
       </div>
     </form>
