@@ -86,6 +86,11 @@ ul.dropdown-content li a {
     margin-top: 15%;
 }
 
+.card-image{
+    height: 100px;
+    overflow: hidden;
+}
+
   main {
     flex: 1 0 auto;
   }
