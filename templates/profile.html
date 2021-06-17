@@ -9,6 +9,19 @@
             <div class="card-panel">
                 <h3 class="center-align">{{ username }}'s Profile</h3>
             </div>
+            {% for recipe in profile_recipes %}
+        {{ recipe.country }}<br>
+        {{ recipe.recipe_name }}<br>
+        {{ recipe.description }}<br>
+        {{ recipe.serves }}<br>
+        {{ recipe.image_url }}<br>
+        {{ recipe.prep_time }}<br>
+        {{ recipe.cook_time }}<br>
+        {{ recipe.ingredients }}<br>
+        {{ recipe.method }}<br>
+        {{ recipe.created_date }}<br>
+        {{ recipe.created_by}}<br>
+    {% endfor %}
         </div>
     </div>
     </div>
