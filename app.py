@@ -83,7 +83,7 @@ def sign_in():
 @app.route("/get_recipes/<country>")
 def get_recipes(country):
     """Show recipes for each country of origin"""
-    if country == "all":
+    if country == "All":
         recipes = list(mongo.db.recipes.find())
     elif country == "Cambodia":
         recipes = list(mongo.db.recipes.find({"country": "Cambodia"}))
