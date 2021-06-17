@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="add-recipe-bg-img">
+<div class="container">
+        <form class="col s12" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
+            <div class="row card-panel">
+                <h4 class="nav-shadow center align">Edit Recipe</h4>
+                <!-- Choose Country dropdown field-->
+                <div class="input-field col s12">
+                    <i class="fas fa-globe-asia prefix green-text text-accent-3"></i>
+                    <select id="country" name="country" class="validate" required>
+                        <option value="" disabled selected>Choose Country</option>
+                        {% for country in countries %}
+                        <option value="{{ country.country }}">{{ country.country }}</option>
+                        {% endfor %}
+                    </select>
+                    <label for="country">Country</label>
+                </div>
+                <!-- Recipe Name field-->
+                <div class="input-field col s12">
+                    <i class="fas fa-utensils prefix green-text text-accent-3"></i>
+                    <input id="recipe_name" name="recipe_name" minlength="5" maxlength="50" type="text" class="validate"
+                        required>
+                    <label for="recipe_name">Recipe Name</label>
+                </div>
+                <!-- Description of the recipe field-->
+                <div class="input-field col s11">
+                    <i class="fas fa-keyboard prefix green-text text-accent-3"></i>
+                    <input id="description" name="description" minlength="5" maxlength="100" type="text"
+                        class="validate" required>
+                    <label for="description">Description</label>
+                </div>
+                <!-- Description info popup-->
+                <div class="col s1">
+                    <i class="fas fa-info fa-2x tooltipped green-text text-accent-3" data-position="left"
+                        data-tooltip="Short description of the recipe, up to 100 characters inc spaces. As an example the description of a Thai Green Curry could be the following: Thai green curry is a variety of curry from Thailand using coconut milk and fresh green chillies."></i>
+                </div>
+                <!-- Serves field dropdown-->
+                <div class="input-field col s12">
+                    <i class="fas fa-users prefix green-text text-accent-3"></i>
+                    <select id="serves" name="serves" class="validate" required>
+                        <option value="" disabled selected>Serves how many?</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                    </select>
+                    <label for="serves">Serves</label>
+                </div>
+                <!-- image url field-->
+                <div class="input-field col s11">
+                    <i class="fas fa-image prefix green-text text-accent-3"></i>
+                    <input id="image_url" name="image_url" type="text" minlength="5" maxlength="50" class="validate"
+                        required>
+                    <label for="image_url">Image URL</label>
+                </div>
+                <!-- image url info popup-->
+                <div class="col s1">
+                    <i class="fas fa-info fa-2x tooltipped green-text text-accent-3" data-position="left"
+                        data-tooltip="Find image online and copy link address into text input field for custom image."></i>
+                </div>
+                <!-- preptime field-->
+                <div class="input-field col s11">
+                    <i class="fas fa-hourglass-start prefix green-text text-accent-3"></i>
+                    <input id="prep_time" name="prep_time" minlength="5" maxlength="9" type="text" class="validate"
+                        required>
+                    <label for="prep_time">Prep time</label>
+                </div>
+                <!-- preptime info popup-->
+                <div class="col s1">
+                    <i class="fas fa-info fa-2x tooltipped green-text text-accent-3" data-position="left"
+                        data-tooltip="Format of prep time to be added as per the following examples 10mins, 20mins, 1hr30mins"></i>
+                </div>
+                <!-- cooktime field-->
+                <div class="input-field col s11">
+                    <i class="fas fa-hourglass-end prefix green-text text-accent-3"></i>
+                    <input id="cook_time" name="cook_time" minlength="5" maxlength="9" type="text" class="validate"
+                        required>
+                    <label for="cook_time">Cook time</label>
+                </div>
+                <!-- cooktime info popup-->
+                <div class="col s1">
+                    <i class="fas fa-info fa-2x tooltipped green-text text-accent-3" data-position="left"
+                        data-tooltip="Format of cook time to be added as per the following examples 10mins, 20mins, 1hr30mins"></i>
+                </div>
+                <!-- ingredients field-->
+                <div class="input-field col s11">
+                    <i class="fas fa-list-ol prefix green-text text-accent-3"></i>
+                    <textarea id="ingredients" name="ingredients" minlength="5" maxlength="300" type="text"
+                        class="materalize-textarea validate" required></textarea>
+                    <label for="ingredients">Ingredients</label>
+                </div>
+                <!-- ingredients info popup-->
+                <div class="col s1">
+                    <i class="fas fa-info fa-2x tooltipped green-text text-accent-3" data-position="left"
+                        data-tooltip="Please enter each ingredient on a new line"></i>
+                </div>
+                <div class="input-field col s11">
+                    <i class="fas fa-comments prefix green-text text-accent-3"></i>
+                    <textarea id="method" name="method" minlength="5" maxlength="300" type="text"
+                        class="materalize-textarea validate" required></textarea>
+                    <label for="method">Method</label>
+                </div>
+                <div class="col s1">
+                    <i class="fas fa-info fa-2x tooltipped green-text text-accent-3" data-position="left"
+                        data-tooltip="Please enter each method step on a new line."></i>
+                </div>
+                <div class="input-field col s12">
+                    <i class="fas fa-calendar-day prefix green-text text-accent-3"></i>
+                    <input id="created_date" name="created_date" type="text" class="validate datepicker" required>
+                    <label for="created_date">Created Date</label>
+                </div>
+                <div class="col s12 center-align">
+                    <button type="submit" class="btn-large green accent-3 nav-shadow">
+                        Edit Recipe <i class="far fa-edit right"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
