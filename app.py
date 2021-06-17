@@ -85,14 +85,24 @@ def get_recipes(country):
     """Show recipes for each country of origin"""
     if country == "all":
         recipes = list(mongo.db.recipes.find())
+    elif country == "Cambodia":
+        recipes = list(mongo.db.recipes.find({"country": "Cambodia"}))
+    elif country == "Indonesia":
+        recipes = list(mongo.db.recipes.find({"country": "Indonesia"}))
+    elif country == "Laos":
+        recipes = list(mongo.db.recipes.find({"country": "Laos"}))
+    elif country == "Malaysia":
+        recipes = list(mongo.db.recipes.find({"country": "Malaysia"}))
+    elif country == "Myanmar":
+        recipes = list(mongo.db.recipes.find({"country": "Myanmar"}))
+    elif country == "Philippines":
+        recipes = list(mongo.db.recipes.find({"country": "Philippines"}))
+    elif country == "Singapore":
+        recipes = list(mongo.db.recipes.find({"country": "Singapore"}))
     elif country == "Thailand":
         recipes = list(mongo.db.recipes.find({"country": "Thailand"}))
-    elif country == "Thailand":
-        recipes = list(mongo.db.recipes.find({"country": "Thailand"}))
-    elif country == "Thailand":
-        recipes = list(mongo.db.recipes.find({"country": "Thailand"}))
-    elif country == "Thailand":
-        recipes = list(mongo.db.recipes.find({"country": "Thailand"}))
+    elif country == "Vietnam":
+        recipes = list(mongo.db.recipes.find({"country": "Vietnam"}))
     else:
         recipes = list(mongo.db.recipes.find())
 
