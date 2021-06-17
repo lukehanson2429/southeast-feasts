@@ -117,13 +117,19 @@ def profile(username):
         {"username": session["user"]})["username"]
 
     if session["user"]:
-        return render_template("profile.html", username=username)
-
+        if session["user"] == "admin":
+            profile_recipes = list(mongo.db.recipes.find())
+        else:
+            profile_recipes = list(
+                mongo.db.recipes.find({"created_by": session["user"]}))
+        return render_template(
+            "profile.html", username=username, profile_recipes=profile_recipes)
     return redirect(url_for("sign_in"))
+
 
 @app.route("/signout")
 def sign_out():
-    #remove user from session cookies
+    # remove user from session cookies
     flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("sign_in"))
