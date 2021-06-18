@@ -113,6 +113,10 @@ ul.dropdown-content li a {
     margin: 5px;
 }
 
+.btn-large {
+    margin: 5px;
+}
+
 .recipe-name {
     padding: 10px;
     margin: 0;

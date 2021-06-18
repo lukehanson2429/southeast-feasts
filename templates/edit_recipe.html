@@ -9,9 +9,13 @@
                 <div class="input-field col s12">
                     <i class="fas fa-globe-asia prefix green-text text-accent-3"></i>
                     <select id="country" name="country" class="validate" required>
-                        <option value="" disabled selected>Choose Country</option>
+                        <option value="" disabled>Choose Country</option>
                         {% for country in countries %}
-                        <option value="{{ country.country }}">{{ country.country }}</option>
+                            {% if country.country == recipe.country %}
+                                <option value="{{ country.country }}" selected>{{ country.country }}</option>
+                            {% else %}
+                                <option value="{{ country.country }}">{{ country.country }}</option>
+                            {% endif %}
                         {% endfor %}
                     </select>
                     <label for="country">Country</label>
@@ -19,15 +23,15 @@
                 <!-- Recipe Name field-->
                 <div class="input-field col s12">
                     <i class="fas fa-utensils prefix green-text text-accent-3"></i>
-                    <input id="recipe_name" name="recipe_name" minlength="5" maxlength="50" type="text" class="validate"
-                        required>
+                    <input id="recipe_name" name="recipe_name" minlength="5" maxlength="50" 
+                    value="{{ recipe.recipe_name }}" type="text" class="validate" required>
                     <label for="recipe_name">Recipe Name</label>
                 </div>
                 <!-- Description of the recipe field-->
                 <div class="input-field col s11">
                     <i class="fas fa-keyboard prefix green-text text-accent-3"></i>
-                    <input id="description" name="description" minlength="5" maxlength="100" type="text"
-                        class="validate" required>
+                    <input id="description" name="description" minlength="5" maxlength="100" 
+                    value="{{ recipe.description }}" type="text" class="validate" required>
                     <label for="description">Description</label>
                 </div>
                 <!-- Description info popup-->
@@ -39,7 +43,7 @@
                 <div class="input-field col s12">
                     <i class="fas fa-users prefix green-text text-accent-3"></i>
                     <select id="serves" name="serves" class="validate" required>
-                        <option value="" disabled selected>Serves how many?</option>
+                        <option value="{{ recipe.serves }}"selected>{{ recipe.serves }}</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -54,8 +58,8 @@
                 <!-- image url field-->
                 <div class="input-field col s11">
                     <i class="fas fa-image prefix green-text text-accent-3"></i>
-                    <input id="image_url" name="image_url" type="text" minlength="5" maxlength="50" class="validate"
-                        required>
+                    <input id="image_url" name="image_url" type="text" minlength="5" 
+                    value="{{ recipe.image_url }}" maxlength="50" class="validate" required>
                     <label for="image_url">Image URL</label>
                 </div>
                 <!-- image url info popup-->
@@ -66,8 +70,8 @@
                 <!-- preptime field-->
                 <div class="input-field col s11">
                     <i class="fas fa-hourglass-start prefix green-text text-accent-3"></i>
-                    <input id="prep_time" name="prep_time" minlength="5" maxlength="9" type="text" class="validate"
-                        required>
+                    <input id="prep_time" name="prep_time" minlength="5" 
+                    value="{{ recipe.prep_time }}" maxlength="9" type="text" class="validate" required>
                     <label for="prep_time">Prep time</label>
                 </div>
                 <!-- preptime info popup-->
@@ -78,8 +82,8 @@
                 <!-- cooktime field-->
                 <div class="input-field col s11">
                     <i class="fas fa-hourglass-end prefix green-text text-accent-3"></i>
-                    <input id="cook_time" name="cook_time" minlength="5" maxlength="9" type="text" class="validate"
-                        required>
+                    <input id="cook_time" name="cook_time" minlength="5" 
+                    value="{{ recipe.cook_time }}" maxlength="9" type="text" class="validate" required>
                     <label for="cook_time">Cook time</label>
                 </div>
                 <!-- cooktime info popup-->
@@ -91,7 +95,7 @@
                 <div class="input-field col s11">
                     <i class="fas fa-list-ol prefix green-text text-accent-3"></i>
                     <textarea id="ingredients" name="ingredients" minlength="5" maxlength="300" type="text"
-                        class="materalize-textarea validate" required></textarea>
+                        class="materalize-textarea validate" required>{{- recipe.ingredients -}}</textarea>
                     <label for="ingredients">Ingredients</label>
                 </div>
                 <!-- ingredients info popup-->
@@ -99,22 +103,29 @@
                     <i class="fas fa-info fa-2x tooltipped green-text text-accent-3" data-position="left"
                         data-tooltip="Please enter each ingredient on a new line"></i>
                 </div>
+                <!-- Method field-->
                 <div class="input-field col s11">
                     <i class="fas fa-comments prefix green-text text-accent-3"></i>
                     <textarea id="method" name="method" minlength="5" maxlength="300" type="text"
-                        class="materalize-textarea validate" required></textarea>
+                        class="materalize-textarea validate" required>{{- recipe.method -}}</textarea>
                     <label for="method">Method</label>
                 </div>
+                <!-- Method info popup-->                
                 <div class="col s1">
                     <i class="fas fa-info fa-2x tooltipped green-text text-accent-3" data-position="left"
                         data-tooltip="Please enter each method step on a new line."></i>
                 </div>
+                <!-- Created Date Field-->
                 <div class="input-field col s12">
                     <i class="fas fa-calendar-day prefix green-text text-accent-3"></i>
-                    <input id="created_date" name="created_date" type="text" class="validate datepicker" required>
+                    <input id="created_date" name="created_date" type="text" 
+                    value="{{ recipe.created_date }}" class="validate datepicker" required>
                     <label for="created_date">Created Date</label>
                 </div>
+                <!-- Submit Button-->
                 <div class="col s12 center-align">
+                    <a href="{{ url_for('profile', username=session['user']) }}" 
+                        class="btn-large red darken-1 nav-shadow">Cancel</a>
                     <button type="submit" class="btn-large green accent-3 nav-shadow">
                         Edit Recipe <i class="far fa-edit right"></i>
                     </button>
