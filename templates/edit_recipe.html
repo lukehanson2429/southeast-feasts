@@ -59,7 +59,7 @@
                 <div class="input-field col s11">
                     <i class="fas fa-image prefix green-text text-accent-3"></i>
                     <input id="image_url" name="image_url" type="text" minlength="5" 
-                    value="{{ recipe.image_url }}" maxlength="50" class="validate" required>
+                    value="{{ recipe.image_url }}" maxlength="300" class="validate" required>
                     <label for="image_url">Image URL</label>
                 </div>
                 <!-- image url info popup-->
@@ -126,7 +126,7 @@
                 <div class="col s12 center-align">
                     <a href="{{ url_for('profile', username=session['user']) }}" 
                         class="btn-large red darken-1 nav-shadow">Cancel</a>
-                    <button type="submit" class="btn-large green accent-3 nav-shadow">
+                    <button type="submit" class="btn-large blue darken-1 nav-shadow">
                         Edit Recipe <i class="far fa-edit right"></i>
                     </button>
                 </div>
