@@ -9,6 +9,7 @@ $( document ).ready(function () {
     });
     $('select').formSelect();
     $('.tooltipped').tooltip();
+    $('.modal').modal();
     $('.datepicker').datepicker({
         format: "dd mmmm, yyyy",
         yearRange: 3,
