@@ -80,12 +80,6 @@ ul.dropdown-content li a {
     color: white;
 }
 
-.welcome-img img {
-    height: 40vh;
-    width: 100%;
-    margin-top: 15%;
-}
-
 .card-image{
     height: 150px;
     overflow: hidden;

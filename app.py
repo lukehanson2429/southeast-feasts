@@ -23,7 +23,8 @@ mongo = PyMongo(app)
 def get_home():
     # find recipes by Latest created date limit to 4
     recipes = mongo.db.recipes.find().sort("created_date", -1).limit(4)
-    return render_template("index.html", recipes=recipes)
+    countries = mongo.db.countries.find().sort("flag", 1)
+    return render_template("index.html", recipes=recipes, countries=countries)
 
 
 @app.route("/sign_up", methods=["GET", "POST"])
