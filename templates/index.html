@@ -33,6 +33,27 @@
                 <img src="static/images/southeast-map.jpg" alt="map-img">
         </div>
     </div>
+        <div class="row">
+        {% for recipe in recipes %}
+    <div class="col s6 m3">
+      <div class="card">
+        <div class="card-image">
+          <img class="materialboxed" width="650" src="{{ recipe.image_url }}" alt="{{ recipe.recipe_name }}">
+        </div>
+        <h6 class="recipe-name nav-shadow white-text green accent-3">{{ recipe.recipe_name }}</h6>
+        <div class="card-content">
+          <p>Country: {{ recipe.country }}</p>
+          <br>
+          <strong>Created By: {{ recipe.created_by }}</strong><br>
+          <em>Created date: {{ recipe.created_date }}</em>
+        </div>
+        <div class="card-action center-align">
+          <a class="btn-small green accent-3 nav-shadow">Recipe</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
 </div>
 
 

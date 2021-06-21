@@ -10,6 +10,7 @@ $( document ).ready(function () {
     $('select').formSelect();
     $('.tooltipped').tooltip();
     $('.modal').modal();
+    $('.materialboxed').materialbox();
     $('.datepicker').datepicker({
         format: "dd mmmm, yyyy",
         yearRange: 3,
