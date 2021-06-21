@@ -21,7 +21,8 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/get_home")
 def get_home():
-    recipes = mongo.db.recipes.find()
+    # find recipes by Latest created date limit to 4
+    recipes = mongo.db.recipes.find().sort("created_date", -1).limit(4)
     return render_template("index.html", recipes=recipes)
 
 
@@ -108,6 +109,13 @@ def get_recipes(country):
 
     return render_template(
         "recipes.html", recipes=recipes, country=country)
+
+
+# find one recipe to show return recipe description
+# @app.route("/recipe_description/<recipe_id>")
+# def recipe_description(recipe_id):
+#    recipes = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+#    return render_template("recipe.html", recipes=recipes)
 
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
