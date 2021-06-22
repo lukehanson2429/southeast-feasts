@@ -16,7 +16,9 @@
         <!-- Dropdown Content Navbar -->
         <ul id="dropdown1" class="dropdown-content">
             <li><a href="{{ url_for('get_recipes', country='All') }}">All</a></li>
+            <li><a href="{{ url_for('get_recipes', country='Brunei') }}">Brunei</a></li>
             <li><a href="{{ url_for('get_recipes', country='Cambodia') }}">Cambodia</a></li>
+            <li><a href="{{ url_for('get_recipes', country='East Timor') }}">East Timor</a></li>
             <li><a href="{{ url_for('get_recipes', country='Indonesia') }}">Indonesia</a></li>
             <li><a href="{{ url_for('get_recipes', country='Laos') }}">Laos</a></li>
             <li><a href="{{ url_for('get_recipes', country='Malaysia') }}">Malaysia</a></li>
@@ -47,8 +49,10 @@
         </nav>
         <!-- Dropdown Content SideNav -->
 <ul id="dropdown2" class="dropdown-content">
-            <li><a href="{{ url_for('get_recipes', country='all') }}">All</a></li>
+            <li><a href="{{ url_for('get_recipes', country='All') }}">All</a></li>
+            <li><a href="{{ url_for('get_recipes', country='Brunei') }}">Brunei</a></li>
             <li><a href="{{ url_for('get_recipes', country='Cambodia') }}">Cambodia</a></li>
+            <li><a href="{{ url_for('get_recipes', country='East Timor') }}">East Timor</a></li>
             <li><a href="{{ url_for('get_recipes', country='Indonesia') }}">Indonesia</a></li>
             <li><a href="{{ url_for('get_recipes', country='Laos') }}">Laos</a></li>
             <li><a href="{{ url_for('get_recipes', country='Malaysia') }}">Malaysia</a></li>
@@ -84,7 +88,7 @@
             {% endif %}
         {% endwith %}
     </section>
-    <main>
+    <main class="grey lighten-4">
     {% block content %}
     {% endblock %}
     </main>

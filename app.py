@@ -87,8 +87,12 @@ def get_recipes(country):
     """Show recipes for each country of origin"""
     if country == "All":
         recipes = list(mongo.db.recipes.find())
+    elif country == "Brunei":
+        recipes = list(mongo.db.recipes.find({"country": "Brunei"}))
     elif country == "Cambodia":
         recipes = list(mongo.db.recipes.find({"country": "Cambodia"}))
+    elif country == "East Timor":
+        recipes = list(mongo.db.recipes.find({"country": "East Timor"}))
     elif country == "Indonesia":
         recipes = list(mongo.db.recipes.find({"country": "Indonesia"}))
     elif country == "Laos":
