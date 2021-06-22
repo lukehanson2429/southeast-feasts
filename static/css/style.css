@@ -1,10 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 
+html,
 body {
     font-family: "Be Vietnam", sans-serif;
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
 
 .nav-shadow {
@@ -19,7 +23,7 @@ ul.dropdown-content li a {
 
 
 .home-banner {
-    height: 40vh;
+    height: 30vh;
 
     background: url("../images/home-banner.jpg") no-repeat center center fixed;
     display: flex;
@@ -30,6 +34,16 @@ ul.dropdown-content li a {
     background-blend-mode:multiply;
 }
 
+.home-content {
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+.carousel {
+    overflow: visible;
+    margin-left: 121px;
+}
+
 .sign-bg-img {
     height: 100vh;
 
@@ -37,13 +51,11 @@ ul.dropdown-content li a {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
     background-color:rgba(0,0,0,0.5);
     background-blend-mode:multiply;
 }
 
 .add-recipe-bg-img {
-    height: auto;
 
     background: url("../images/add-recipe.jpg") no-repeat center center fixed;
     display: flex;
@@ -55,29 +67,12 @@ ul.dropdown-content li a {
 }
 
 .logo-box {
-    position: relative;
-    display: inline-block;
     color: white;
-    padding-left: 40px;
 }
 
 .logo-box img {
-    width: 155px;
-    height: 155px;
-}
-.logo-box .logo-text {
-    position: absolute;
-    z-index: 999;
-    margin: 0 auto;
-    left: 0;
-    right: 20%;
-    top: 100%;
-    text-align: center;
-    width: 100%;
-}
-
-.logo-text strong {
-    color: white;
+    width: 100px;
+    height: 100px;
 }
 
 .card-image{
@@ -88,6 +83,10 @@ ul.dropdown-content li a {
   main {
     flex: 1 0 auto;
   }
+
+.welcome {
+    padding-bottom: 20px;
+}
 
 .flashes {
     line-height: 2;

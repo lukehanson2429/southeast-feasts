@@ -13,6 +13,7 @@ $( document ).ready(function () {
     $('.materialboxed').materialbox();
     $('.carousel.carousel-slider').carousel({
     fullWidth: true,
+    duration: 2000
     });
     autoplay();
     function autoplay() {
