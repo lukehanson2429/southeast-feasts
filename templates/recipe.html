@@ -3,25 +3,46 @@
 
 <div class="container">
     <div class="card-panel">
-                <h4 class="center-align">{{ recipe.recipe_name }}</h4>
-            </div>
+        <h4 class="center-align"><i class="fas fa-utensils prefix green-text text-accent-3"></i>
+            {{ recipe.recipe_name }}</h4>
+    </div>
     <div class="row">
-    <div class="col s12 m6">
-        <ul>
-            <li>Country: {{ recipe.country }}</li>
-            <li>Description: {{ recipe.description }}</li>
-            <li>Serves: {{ recipe.serves }}</li>
-            <li>Prep time: {{ recipe.prep_time }}</li>
-            <li>Cook time: {{ recipe.cook_time }}</li>
-            <li>Created Date: {{ recipe.created_date }}</li>
-            <li>Created By: {{ recipe.created_by }}</li>
-        </ul>
-    </div>
-    <div class="col s12 m6">
-          <img class="responsive-img" src="{{ recipe.image_url }}" alt="{{ recipe.recipe_name }}">
+        <div class="col s12 m6">
+            <ul>
+                <li>
+                    <h6><i class="fas fa-globe-asia prefix green-text text-accent-3"></i> Country: {{ recipe.country }}
+                    </h6>
+                </li>
+                <li>
+                    <h6><i class="fas fa-keyboard prefix green-text text-accent-3"></i> Description:
+                        {{ recipe.description }}</h6>
+                </li>
+                <li>
+                    <h6><i class="fas fa-users prefix green-text text-accent-3"></i> Serves: {{ recipe.serves }}</h6>
+                </li>
+                <li>
+                    <h6><i class="fas fa-hourglass-start prefix green-text text-accent-3"></i> Prep time:
+                        {{ recipe.prep_time }}</h6>
+                </li>
+                <li>
+                    <h6><i class="fas fa-hourglass-end prefix green-text text-accent-3"></i> Cook time:
+                        {{ recipe.cook_time }}</h6>
+                </li>
+                <li>
+                    <h6><i class="fas fa-calendar-day prefix green-text text-accent-3"></i> Created Date:
+                        {{ recipe.created_date }}</h6>
+                </li>
+                <li>
+                    <h6><i class="fas fa-user prefix green-text text-accent-3"></i> Created By: {{ recipe.created_by }}
+                    </h6>
+                </li>
+            </ul>
         </div>
-      </div>
+        <div class="col s12 m6">
+            <img class="responsive-img" src="{{ recipe.image_url }}" alt="{{ recipe.recipe_name }}">
+        </div>
     </div>
+</div>
 
 
 {% endblock %}
