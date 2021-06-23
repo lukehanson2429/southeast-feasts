@@ -19,10 +19,11 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
-@app.route("/get_home")
+@app.route("/home")
 def get_home():
     # find recipes by Latest created date limit to 4
     recipes = mongo.db.recipes.find().sort("created_date", -1).limit(4)
+    # find countries flag for Carousel on Home page
     countries = mongo.db.countries.find().sort("flag", 1)
     return render_template("index.html", recipes=recipes, countries=countries)
 
@@ -82,7 +83,7 @@ def sign_in():
 
 
 # Return recipe by country
-@app.route("/get_recipes/<country>")
+@app.route("/recipes/<country>")
 def get_recipes(country):
     """Show recipes for each country of origin"""
     if country == "All":
@@ -117,10 +118,10 @@ def get_recipes(country):
 
 
 # find one recipe to show return recipe description
-# @app.route("/recipe_description/<recipe_id>")
-# def recipe_description(recipe_id):
-#    recipes = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-#    return render_template("recipe.html", recipes=recipes)
+@app.route("/recipe_description/<recipe_id>")
+def recipe_description(recipe_id):
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    return render_template("recipe.html", recipe=recipe)
 
 
 @app.route("/profile/<username>", methods=["GET", "POST"])

@@ -53,7 +53,7 @@
                     <em>Created date: {{ recipe.created_date }}</em>
                 </div>
                 <div class="card-action center-align">
-                    <a class="btn-small green accent-3 nav-shadow">Recipe</a>
+                    <a href="{{ url_for('recipe_description', recipe_id=recipe._id) }}" class="btn-small green accent-3 nav-shadow">Recipe</a>
                 </div>
             </div>
         </div>

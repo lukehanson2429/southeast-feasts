@@ -3,10 +3,9 @@
 
 <div class="container">
     <div class="card-panel">
-                <h4 class="center-align">{{ country }} Recipes</h4>
+                <h4 class="center-align">{{ recipe.recipe_name }}</h4>
             </div>
     <div class="row">
-        {% for recipe in recipes %}
     <div class="col s6 m3">
       <div class="card hoverable">
         <div class="card-image">
@@ -20,11 +19,10 @@
           <em>Created date: {{ recipe.created_date }}</em>
         </div>
         <div class="card-action center-align">
-          <a href="{{ url_for('recipe_description', recipe_id=recipe._id) }}" class="btn-small green accent-3 nav-shadow">Recipe</a>
+          <a class="btn-small green accent-3 nav-shadow">Recipe</a>
         </div>
       </div>
     </div>
-    {% endfor %}
   </div>
 </div>
 {% endblock %}
