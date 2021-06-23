@@ -11,53 +11,64 @@
         </div>
     </div>
 </div>
-    <div class="row">
-  <div class="col s4 m3 l2">
-            <div class="carousel carousel-slider">
+<div class="row">
+    <div class="col s4 m3 l2">
+        <div class="carousel carousel-slider">
             {% for country in countries %}
-                <div class="carousel-item">
+            <div class="carousel-item">
                 <img class="center-align" src="{{ country.flag }}">
-                </div>
-                
-            {% endfor %}
             </div>
+
+            {% endfor %}
         </div>
-        </div>
-<div class="container home-content">
-    <div class="row welcome">
+    </div>
+</div>
+<div class="container">
+    <div class="row home-padding">
         <div class="col s12">
             <div class="card-panel">
-            <h4>Welcome!</h4>
-            <p>South East asian dishes have become firm favourites all over the world. Classics like Pho & Pad Thai are enjoyed by millions everyday. This website enables you to share your favourite recipes from across all of South East aisa, whether it is one of your traditional family recipes or one you discovered on your travels.
-            </p>
-            <strong>Please sign up today to start sharing your ideas.</strong>
+                <h4>Welcome!</h4>
+                <p>South East asian dishes have become firm favourites all over the world. Classics like Pho & Pad Thai
+                    are enjoyed by millions everyday. This website enables you to share your favourite recipes from
+                    across all of South East aisa, whether it is one of your traditional family recipes or one you
+                    discovered on your travels.
+                </p>
             </div>
         </div>
     </div>
-    <div>
-    <h4 class="center-align">Recently Created Recipes</h4>
-  </div>
-        <div class="row">
+    <hr>
+    <div class="row home-padding">
+        <h4 class="center-align">Recently Created Recipes</h4>
         {% for recipe in recipes %}
-    <div class="col s6 m3">
-      <div class="card hoverable">
-        <div class="card-image">
-          <img class="materialboxed" width="650" src="{{ recipe.image_url }}" alt="{{ recipe.recipe_name }}">
+        <div class="col s6 m3">
+            <div class="card hoverable">
+                <div class="card-image">
+                    <img class="materialboxed" width="650" src="{{ recipe.image_url }}" alt="{{ recipe.recipe_name }}">
+                </div>
+                <h6 class="recipe-name nav-shadow white-text green accent-3">{{ recipe.recipe_name }}</h6>
+                <div class="card-content">
+                    <p>Country: {{ recipe.country }}</p>
+                    <br>
+                    <strong>Created By: {{ recipe.created_by }}</strong><br>
+                    <em>Created date: {{ recipe.created_date }}</em>
+                </div>
+                <div class="card-action center-align">
+                    <a class="btn-small green accent-3 nav-shadow">Recipe</a>
+                </div>
+            </div>
         </div>
-        <h6 class="recipe-name nav-shadow white-text green accent-3">{{ recipe.recipe_name }}</h6>
-        <div class="card-content">
-          <p>Country: {{ recipe.country }}</p>
-          <br>
-          <strong>Created By: {{ recipe.created_by }}</strong><br>
-          <em>Created date: {{ recipe.created_date }}</em>
-        </div>
-        <div class="card-action center-align">
-          <a class="btn-small green accent-3 nav-shadow">Recipe</a>
-        </div>
-      </div>
+        {% endfor %}
     </div>
-    {% endfor %}
-  </div>
+    <hr>
+    <div class="row home-padding">
+        <a href="{{ url_for('sign_up') }}"><h4 class="center-align black-text">Register today!</h4></a>
+        <div class="col s6 m4">
+           <h6>Share Your Recipes</h6>
+        </div>
+        <div class="col s6 m4">
+           <h6>Discover New Recipes</h6>
+        </div>
+    </div>
 </div>
 
 

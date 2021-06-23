@@ -32,11 +32,12 @@ ul.dropdown-content li a {
     position: relative;
     background-color:rgba(0,0,0,0.5);
     background-blend-mode:multiply;
+    z-index: 10;
 }
 
-.home-content {
-    padding-top: 20px;
-    padding-bottom: 40px;
+hr {
+    border: 1px solid #00e676;
+    border-radius: 60%;
 }
 
 .carousel {
@@ -53,6 +54,7 @@ ul.dropdown-content li a {
     justify-content: center;
     background-color:rgba(0,0,0,0.5);
     background-blend-mode:multiply;
+    z-index: 10;
 }
 
 .add-recipe-bg-img {
@@ -64,6 +66,7 @@ ul.dropdown-content li a {
     position: relative;
     background-color:rgba(0,0,0,0.5);
     background-blend-mode:multiply;
+    z-index: 10;
 }
 
 .logo-box {
@@ -84,7 +87,8 @@ ul.dropdown-content li a {
     flex: 1 0 auto;
   }
 
-.welcome {
+.home-padding {
+    padding-top: 20px;
     padding-bottom: 20px;
 }
 
