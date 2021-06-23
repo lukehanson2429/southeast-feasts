@@ -3,6 +3,7 @@
 html,
 body {
     font-family: "Be Vietnam", sans-serif;
+    letter-spacing: 0.05em;
     display: flex;
     min-height: 100vh;
     flex-direction: column;
