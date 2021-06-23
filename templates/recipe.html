@@ -7,13 +7,21 @@
             </div>
     <div class="row">
     <div class="col s12 m6">
-          <img class="responsive-img circle" src="{{ recipe.image_url }}" alt="{{ recipe.recipe_name }}">
-        </div>
-      </div>
+        <ul>
+            <li>Country: {{ recipe.country }}</li>
+            <li>Description: {{ recipe.description }}</li>
+            <li>Serves: {{ recipe.serves }}</li>
+            <li>Prep time: {{ recipe.prep_time }}</li>
+            <li>Cook time: {{ recipe.cook_time }}</li>
+            <li>Created Date: {{ recipe.created_date }}</li>
+            <li>Created By: {{ recipe.created_by }}</li>
+        </ul>
+    </div>
     <div class="col s12 m6">
-          <p>Country: {{ recipe.country }}</p>
+          <img class="responsive-img" src="{{ recipe.image_url }}" alt="{{ recipe.recipe_name }}">
         </div>
       </div>
     </div>
+
 
 {% endblock %}
