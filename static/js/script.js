@@ -13,12 +13,12 @@ $( document ).ready(function () {
     $('.materialboxed').materialbox();
     $('.carousel.carousel-slider').carousel({
     fullWidth: true,
-    duration: 2000
+    duration: 1000
     });
     autoplay();
     function autoplay() {
     $('.carousel').carousel('next');
-    setTimeout(autoplay, 5000);
+    setTimeout(autoplay, 3000);
     }
     $('.datepicker').datepicker({
         format: "dd mmmm, yyyy",
