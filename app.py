@@ -82,39 +82,52 @@ def sign_in():
     return render_template("signin.html")
 
 
-# Return recipe by country
+# Return recipe & flags by country
 @app.route("/recipes/<country>")
 def get_recipes(country):
     """Show recipes for each country of origin"""
     if country == "All":
         recipes = list(mongo.db.recipes.find())
+        flags = list(mongo.db.countries.find())
     elif country == "Brunei":
         recipes = list(mongo.db.recipes.find({"country": "Brunei"}))
+        flags = mongo.db.countries.find_one({"country": "Brunei"})
     elif country == "Cambodia":
         recipes = list(mongo.db.recipes.find({"country": "Cambodia"}))
+        flags = mongo.db.countries.find_one({"country": "Cambodia"})
     elif country == "East Timor":
         recipes = list(mongo.db.recipes.find({"country": "East Timor"}))
+        flags = mongo.db.countries.find_one({"country": "East Timor"})
     elif country == "Indonesia":
         recipes = list(mongo.db.recipes.find({"country": "Indonesia"}))
+        flags = mongo.db.countries.find_one({"country": "Indonesia"})
     elif country == "Laos":
         recipes = list(mongo.db.recipes.find({"country": "Laos"}))
+        flags = mongo.db.countries.find_one({"country": "Laos"})
     elif country == "Malaysia":
         recipes = list(mongo.db.recipes.find({"country": "Malaysia"}))
+        flags = mongo.db.countries.find_one({"country": "Malaysia"})
     elif country == "Myanmar":
         recipes = list(mongo.db.recipes.find({"country": "Myanmar"}))
+        flags = mongo.db.countries.find_one({"country": "Myanmar"})
     elif country == "Philippines":
         recipes = list(mongo.db.recipes.find({"country": "Philippines"}))
+        flags = mongo.db.countries.find_one({"country": "Philippines"})
     elif country == "Singapore":
         recipes = list(mongo.db.recipes.find({"country": "Singapore"}))
+        flags = mongo.db.countries.find_one({"country": "Singapore"})
     elif country == "Thailand":
         recipes = list(mongo.db.recipes.find({"country": "Thailand"}))
+        flags = mongo.db.countries.find_one({"country": "Thailand"})
     elif country == "Vietnam":
         recipes = list(mongo.db.recipes.find({"country": "Vietnam"}))
+        flags = mongo.db.countries.find_one({"country": "Vietnam"})
     else:
         recipes = list(mongo.db.recipes.find())
+        flags = list(mongo.db.countries.find())
 
     return render_template(
-        "recipes.html", recipes=recipes, country=country)
+        "recipes.html", recipes=recipes, country=country, flags=flags)
 
 
 # find one recipe to show return recipe description
