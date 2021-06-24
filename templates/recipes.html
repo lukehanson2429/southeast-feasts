@@ -2,13 +2,16 @@
 {% block content %}
 
 <div class="container">
-    <div class="row">
+    <div class="row country-heading">
+                        <div class="col s12 hide-on-small-only m2 country-flag">
+            <img class="responsive-img" src="{{ flags.flag }}" alt="{{ flags.country }}">
+        </div>
         <div class="col s12 m8">
             <div class="card-panel">
                 <h4 class="center-align"> {{ country }} Recipes</h4>
             </div>
         </div>
-                <div class="col s12 m4">
+                <div class="col s12 m2 country-flag">
             <img class="responsive-img" src="{{ flags.flag }}" alt="{{ flags.country }}">
         </div>
     </div>

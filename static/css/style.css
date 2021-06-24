@@ -93,6 +93,15 @@ hr {
     padding-bottom: 20px;
 }
 
+.country-heading {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.country-flag {
+    margin-top: 15px;
+}
+
 .flashes {
     line-height: 2;
     color: #ce3434;
