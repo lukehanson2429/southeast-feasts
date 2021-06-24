@@ -7,7 +7,7 @@
             {{ recipe.recipe_name }}</h4>
     </div>
     <div class="row recipe-list">
-        <div class="col s12 m6">
+        <div class="col s12 m8">
             <ul>
                 <li>
                     <h6><i class="fas fa-globe-asia prefix green-text text-accent-3"></i> Country: {{ recipe.country }}
@@ -38,10 +38,11 @@
                 </li>
             </ul>
         </div>
-        <div class="col s12 m6">
+        <div class="col s12 m4">
             <img class="responsive-img" src="{{ recipe.image_url }}" alt="{{ recipe.recipe_name }}">
         </div>
     </div>
+    <hr>
 </div>
 
 
