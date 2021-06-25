@@ -157,3 +157,18 @@ hr {
 .recipe-list li:first-child {
     margin-top:0;
 }
+
+.ingredients-list li{
+    margin-top: 10px;
+    border-bottom:1px solid #00e676;
+    border-radius: 10%;
+}
+
+.ingredients-list li:first-child {
+    margin-top:0;
+}
+
+.ingredients-list {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
