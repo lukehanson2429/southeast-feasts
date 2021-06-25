@@ -86,9 +86,9 @@ def sign_in():
 @app.route("/recipes/<country>")
 def get_recipes(country):
     """Show recipes for each country of origin"""
-    if country == "All":
+    if country == "South East Asia":
         recipes = list(mongo.db.recipes.find())
-        flags = list(mongo.db.countries.find())
+        flags = mongo.db.allcountries.find_one({"country": "South East Asia"})
     elif country == "Brunei":
         recipes = list(mongo.db.recipes.find({"country": "Brunei"}))
         flags = mongo.db.countries.find_one({"country": "Brunei"})
@@ -124,7 +124,7 @@ def get_recipes(country):
         flags = mongo.db.countries.find_one({"country": "Vietnam"})
     else:
         recipes = list(mongo.db.recipes.find())
-        flags = list(mongo.db.countries.find())
+        flags = mongo.db.allcountries.find_one({"country": "All"})
 
     return render_template(
         "recipes.html", recipes=recipes, country=country, flags=flags)
