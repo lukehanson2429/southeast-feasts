@@ -3,7 +3,7 @@
 
 <div class="container">
     <div class="card-panel">
-        <h4 class="center-align"><i class="fas fa-utensils prefix green-text text-accent-3"></i>
+                    <h4 class="center-align"><i class="fas fa-utensils prefix green-text text-accent-3"></i>
             {{ recipe.recipe_name }}</h4>
     </div>
     <div class="row recipe-list">
@@ -59,6 +59,11 @@
                 <li><i class="fas fa-comment green-text text-accent-3"></i> {{ method }}</li>
                 {% endfor %}
             </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12 center-align">
+    <a href="{{ url_for('get_recipes', country='South East Asia') }}" class="btn-large green accent-3 text-shadow"><i class="fas fa-arrow-left"></i> All Recipes</a>
         </div>
     </div>
 </div>
