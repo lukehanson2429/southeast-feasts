@@ -84,6 +84,10 @@ hr {
     overflow: hidden;
 }
 
+.card-content {
+ height: 175px;
+}
+
   main {
     flex: 1 0 auto;
   }
@@ -171,4 +175,10 @@ hr {
 .ingredients-list {
     padding-top: 20px;
     padding-bottom: 20px;
+}
+
+@media (max-width: 993px) {
+    .card-content {
+        height: auto;
+    }
 }
