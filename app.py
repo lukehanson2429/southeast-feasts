@@ -180,7 +180,7 @@ def add_recipe():
         }
         mongo.db.recipes.insert_one(recipe)
         flash("Recipe Successfully Added!")
-        return redirect(url_for('get_recipes', country='all'))
+        return redirect(url_for('profile', username=session['user']))
 
     countries = mongo.db.countries.find().sort("country", 1)
     return render_template("add_recipe.html", countries=countries)
@@ -204,6 +204,7 @@ def edit_recipe(recipe_id):
         }
         mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, edit_recipe)
         flash("Recipe Successfully Updated!")
+        return redirect(url_for('profile', username=session['user']))
 
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     countries = mongo.db.countries.find().sort("country", 1)
