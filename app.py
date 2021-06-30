@@ -130,6 +130,15 @@ def get_recipes(country):
         "recipes.html", recipes=recipes, country=country, flags=flags)
 
 
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
+    flags = mongo.db.countries.find_one({"$text": {"$search": query}})
+    return render_template(
+        "recipes.html", recipes=recipes, flags=flags)
+
+
 # find one recipe to show return recipe description
 @app.route("/recipe_description/<recipe_id>")
 def recipe_description(recipe_id):
