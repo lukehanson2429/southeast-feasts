@@ -99,11 +99,12 @@ hr {
 
 .country-heading {
     padding-top: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
 }
 
 .country-flag {
-    margin-top: 15px;
+    margin-top: 8px;
 }
 
 .flashes {
@@ -180,5 +181,11 @@ hr {
 @media (max-width: 993px) {
     .card-content {
         height: auto;
+    }
+}
+
+@media (min-width: 885px) {
+    .search-btn {
+        margin-top: 20px;
     }
 }
