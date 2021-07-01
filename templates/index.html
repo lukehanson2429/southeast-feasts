@@ -45,7 +45,7 @@
                 <div class="card-image">
                     <img class="materialboxed" src="{{ recipe.image_url }}" alt="{{ recipe.recipe_name }}">
                 </div>
-                <h6 class="recipe-name nav-shadow white-text green accent-3">{{ recipe.recipe_name }}</h6>
+                <h6 class="recipe-name text-shadow white-text green accent-3">{{ recipe.recipe_name }}</h6>
                 <div class="card-content">
                     <p>Country: {{ recipe.country }}</p>
                     <br>
@@ -53,7 +53,7 @@
                     <em>Created date: {{ recipe.created_date }}</em>
                 </div>
                 <div class="card-action center-align">
-                    <a href="{{ url_for('recipe_description', recipe_id=recipe._id) }}" class="btn-small green accent-3 nav-shadow">Recipe</a>
+                    <a href="{{ url_for('recipe_description', recipe_id=recipe._id) }}" class="btn-small green accent-3 text-shadow">Recipe</a>
                 </div>
             </div>
         </div>
@@ -77,7 +77,7 @@
            <a href="{{ url_for('get_recipes', country='South East Asia') }}"><img class="responsive-img circle" src="static/images/discover.jpg" alt="discover"></a>
         </div>
         <div class="col s12 center-align">
-            <a href="{{ url_for('sign_in') }}" class="btn-small green accent-3 nav-shadow">Sign In / Sign Up</a>
+            <a href="{{ url_for('sign_in') }}" class="btn-small green accent-3 text-shadow">Sign In / Sign Up</a>
         </div>
     </div>
 </div>

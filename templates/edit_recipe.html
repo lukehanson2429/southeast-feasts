@@ -4,7 +4,7 @@
 <div class="container">
         <form class="col s12" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
             <div class="row card-panel">
-                <h4 class="nav-shadow center align">Edit Recipe</h4>
+                <h4 class="text-shadow center align">Edit Recipe</h4>
                 <!-- Choose Country dropdown field-->
                 <div class="input-field col s12">
                     <i class="fas fa-globe-asia prefix green-text text-accent-3"></i>
@@ -124,7 +124,7 @@
                 <div class="col s12 center-align">
                     <a href="{{ url_for('profile', username=session['user']) }}" 
                         class="btn-large red darken-1 nav-shadow">Cancel</a>
-                    <button type="submit" class="btn-large blue darken-1 nav-shadow">
+                    <button type="submit" class="btn-large blue darken-1 text-shadow">
                         Edit Recipe <i class="far fa-edit right"></i>
                     </button>
                 </div>
