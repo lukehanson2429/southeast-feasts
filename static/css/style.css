@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 
+main {
+    flex: 1 0 auto;
+}
+
+/*--- Font styling ---*/
 html,
 body {
     font-family: "Be Vietnam", sans-serif;
@@ -16,13 +21,20 @@ body {
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 
+/*--- Recipes dropdown Navbar styling ---*/
 ul.dropdown-content li a {
-    color: black; 
+    color: black;
     font-weight: 100;
     text-shadow: none;
 }
 
+/*--- hr styling - index.html ---*/
+hr {
+    border: 1px solid #00e676;
+    border-radius: 60%;
+}
 
+/*--- Image - index.html ---*/
 .home-banner {
     height: 30vh;
 
@@ -31,21 +43,12 @@ ul.dropdown-content li a {
     align-items: center;
     justify-content: center;
     position: relative;
-    background-color:rgba(0,0,0,0.5);
-    background-blend-mode:multiply;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: multiply;
     z-index: 10;
 }
 
-hr {
-    border: 1px solid #00e676;
-    border-radius: 60%;
-}
-
-.carousel {
-    overflow: visible;
-    margin-left: 121px;
-}
-
+/*--- Image - signin/up.html ---*/
 .sign-bg-img {
     height: 100vh;
 
@@ -53,11 +56,12 @@ hr {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color:rgba(0,0,0,0.5);
-    background-blend-mode:multiply;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: multiply;
     z-index: 10;
 }
 
+/*--- Image - add_recipe.html ---*/
 .add-recipe-bg-img {
 
     background: url("../images/add-recipe.jpg") no-repeat center center fixed;
@@ -65,11 +69,16 @@ hr {
     align-items: center;
     justify-content: center;
     position: relative;
-    background-color:rgba(0,0,0,0.5);
-    background-blend-mode:multiply;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: multiply;
     z-index: 10;
 }
-
+/*--- Carousel - index.html ---*/
+.carousel {
+    overflow: visible;
+    margin-left: 121px;
+}
+/*--- Logo - index.html ---*/
 .logo-box {
     color: white;
 }
@@ -79,18 +88,28 @@ hr {
     height: 100px;
 }
 
-.card-image{
+/*--- Recipes Cards styling - index/recipes/profile.html ---*/
+.card-image {
     height: 150px;
     overflow: hidden;
 }
 
 .card-content {
- height: 175px;
+    height: 175px;
 }
 
-  main {
-    flex: 1 0 auto;
-  }
+.card-panel {
+    padding: 10px;
+}
+
+/*--- Button styling  ---*/
+.btn-small {
+    margin: 5px;
+}
+
+.btn-large {
+    margin: 5px;
+}
 
 .home-padding {
     padding-top: 20px;
@@ -117,23 +136,12 @@ hr {
 
 }
 
-.card-panel {
-      padding: 10px;
-  }
-
-.btn-small {
-    margin: 5px;
-}
-
-.btn-large {
-    margin: 5px;
-}
-
 .recipe-name {
     padding: 10px;
     margin: 0;
 }
 
+/*--- Footer - base.html---*/
 .footer-logo img {
     width: 80px;
     height: 80px;
@@ -148,35 +156,38 @@ hr {
     color: #ce3434;
 }
 
+/*---Recipe Description - recipe.html---*/
 .recipe-list {
     padding-top: 20px;
     padding-bottom: 20px;
 }
 
-.recipe-list li{
+.recipe-list li {
     margin-top: 30px;
-    border-bottom:1px solid #00e676;
+    border-bottom: 1px solid #00e676;
     border-radius: 10%;
 }
 
 .recipe-list li:first-child {
-    margin-top:0;
+    margin-top: 0;
 }
 
-.ingredients-list li{
+.ingredients-list li {
     margin-top: 20px;
-    border-bottom:1px solid #00e676;
+    border-bottom: 1px solid #00e676;
     border-radius: 10%;
 }
 
 .ingredients-list li:first-child {
-    margin-top:0;
+    margin-top: 0;
 }
 
 .ingredients-list {
     padding-top: 20px;
     padding-bottom: 20px;
 }
+
+/*---Media queries for varying display sizes---*/
 
 @media (max-width: 993px) {
     .card-content {
