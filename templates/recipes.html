@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row country-heading">
                         <div class="col s12 hide-on-small-only m2 country-flag">
-            <img class="responsive-img" src="{{ flags.flag }}" alt="{{ flags.country }}">
+            <img class="responsive-img" src="{{ flags }}" alt="{{ country }}">
         </div>
         <div class="col s12 m8">
             <div class="card-panel">
@@ -13,12 +13,12 @@
             </div>
         </div>
                 <div class="col s12 m2 country-flag">
-            <img class="responsive-img" src="{{ flags.flag }}" alt="{{ flags.country }}">
+            <img class="responsive-img" src="{{ flags }}" alt="{{ country }}">
         </div>
     </div>
     <!-- Search Bar -->
     <div class="row card-panel">
-        <form action="{{ url_for('search') }}" method="post" class="col s12">
+        <form action="{{ url_for('recipes') }}" method="GET" class="col s12">
             <div class="div center-align">
                 <div class="input-field col s12 m8">
                     <i class="fas fa-search tooltipped prefix" data-position="right" data-tooltip="Search by Country, recipe name or ingredient."></i>
@@ -26,7 +26,7 @@
                     <label for="query">Search Recipes</label>
                 </div>
                 <div class="col s12 m4 search-btn">
-                    <a href="{{ url_for('get_recipes', country='South East Asia') }}" class="btn-small red darken-1 text-shadow">Reset</a>
+                    <a href="{{ url_for('recipes', country='South East Asia') }}" class="btn-small red darken-1 text-shadow">Reset</a>
                     <button type="submit" class="btn-small green accent-3 text-shadow">
                         <i class="fas fa-search left"></i>Search
                     </button>

@@ -16,7 +16,11 @@ app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
-
+COUNTRY_FLAGS = {
+    "south east asia": "https://upload.wikimedia.org/wikipedia/en/thumb/8/87/Flag_of_ASEAN.svg/510px-Flag_of_ASEAN.svg.png",
+    "thailand": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Flag_of_Thailand.svg/510px-Flag_of_Thailand.svg.png",
+    "cambodia": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Flag_of_Cambodia.svg/510px-Flag_of_Cambodia.svg.png"
+}
 
 @app.route("/")
 @app.route("/home")
@@ -24,8 +28,8 @@ def get_home():
     # find recipes by Latest created date limit to 4
     recipes = mongo.db.recipes.find().sort("created_date", -1).limit(4)
     # find countries flag for Carousel on Home page
-    countries = mongo.db.countries.find().sort("flag", 1)
-    return render_template("index.html", recipes=recipes, countries=countries)
+    flags = COUNTRY_FLAGS.values()
+    return render_template("index.html", recipes=recipes, flags=flags)
 
 
 @app.route("/sign_up", methods=["GET", "POST"])
@@ -83,48 +87,24 @@ def sign_in():
 
 
 # Return recipe & flags by country
-@app.route("/recipes/<country>")
-def get_recipes(country):
+@app.route("/recipes")
+def recipes():
     """Show recipes for each country of origin"""
-    if country == "South East Asia":
-        recipes = list(mongo.db.recipes.find())
-        flags = mongo.db.allcountries.find_one({"country": "South East Asia"})
-    elif country == "Brunei":
-        recipes = list(mongo.db.recipes.find({"country": "Brunei"}))
-        flags = mongo.db.countries.find_one({"country": "Brunei"})
-    elif country == "Cambodia":
-        recipes = list(mongo.db.recipes.find({"country": "Cambodia"}))
-        flags = mongo.db.countries.find_one({"country": "Cambodia"})
-    elif country == "East Timor":
-        recipes = list(mongo.db.recipes.find({"country": "East Timor"}))
-        flags = mongo.db.countries.find_one({"country": "East Timor"})
-    elif country == "Indonesia":
-        recipes = list(mongo.db.recipes.find({"country": "Indonesia"}))
-        flags = mongo.db.countries.find_one({"country": "Indonesia"})
-    elif country == "Laos":
-        recipes = list(mongo.db.recipes.find({"country": "Laos"}))
-        flags = mongo.db.countries.find_one({"country": "Laos"})
-    elif country == "Malaysia":
-        recipes = list(mongo.db.recipes.find({"country": "Malaysia"}))
-        flags = mongo.db.countries.find_one({"country": "Malaysia"})
-    elif country == "Myanmar":
-        recipes = list(mongo.db.recipes.find({"country": "Myanmar"}))
-        flags = mongo.db.countries.find_one({"country": "Myanmar"})
-    elif country == "Philippines":
-        recipes = list(mongo.db.recipes.find({"country": "Philippines"}))
-        flags = mongo.db.countries.find_one({"country": "Philippines"})
-    elif country == "Singapore":
-        recipes = list(mongo.db.recipes.find({"country": "Singapore"}))
-        flags = mongo.db.countries.find_one({"country": "Singapore"})
-    elif country == "Thailand":
-        recipes = list(mongo.db.recipes.find({"country": "Thailand"}))
-        flags = mongo.db.countries.find_one({"country": "Thailand"})
-    elif country == "Vietnam":
-        recipes = list(mongo.db.recipes.find({"country": "Vietnam"}))
-        flags = mongo.db.countries.find_one({"country": "Vietnam"})
+    country = request.args.get("country")
+    query = request.args.get("query")
+    country = country if country else "South East Asia"
+    country = country.lower()
+    if country in COUNTRY_FLAGS:
+        flags = COUNTRY_FLAGS[country]
     else:
-        recipes = list(mongo.db.recipes.find())
-        flags = mongo.db.allcountries.find_one({"country": "All"})
+        flags = COUNTRY_FLAGS["south east asia"]
+
+    if query:
+        if (query.lower() in COUNTRY_FLAGS) and COUNTRY_FLAGS[query.lower()]:
+            flags = COUNTRY_FLAGS[query.lower()]
+        recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
+    else:
+        recipes = list(mongo.db.recipes.find({"$text": {"$search": country}}))
 
     return render_template(
         "recipes.html", recipes=recipes, country=country, flags=flags)
