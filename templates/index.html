@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+<!-- Home Banner -->
 <div class="home-banner">
     <div class="row">
         <div class="col s12 center-align">
@@ -11,6 +12,7 @@
         </div>
     </div>
 </div>
+<!-- Flag Materalize Carousel -->
 <div class="row">
     <div class="col s4 m3 l2">
         <div class="carousel carousel-slider">
@@ -23,6 +25,7 @@
         </div>
     </div>
 </div>
+<!-- Welcome Section -->
 <div class="container">
     <div class="row home-padding">
         <div class="col s12">
@@ -37,6 +40,7 @@
         </div>
     </div>
     <hr>
+    <!-- Recently Created Recipes Section -->
     <div class="row home-padding">
         <h4 class="center-align">Recently Created Recipes</h4>
         {% for recipe in recipes %}
@@ -60,6 +64,7 @@
         {% endfor %}
     </div>
     <hr>
+    <!-- Share/Discover Section -->
     <div class="row home-padding">
         <h4 class="center-align black-text">Register today!</h4>
         <div class="col s12 m4 offset-m1 center-align">

@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
+<!-- Heading with Country Flag -->
 <div class="container">
     <div class="row country-heading">
                         <div class="col s12 hide-on-small-only m2 country-flag">
@@ -15,6 +16,7 @@
             <img class="responsive-img" src="{{ flags.flag }}" alt="{{ flags.country }}">
         </div>
     </div>
+    <!-- Search Bar -->
     <div class="row card-panel">
         <form action="{{ url_for('search') }}" method="post" class="col s12">
             <div class="div center-align">
@@ -32,6 +34,7 @@
             </div>
         </form>
     </div>
+    <!-- Card Panel Recipes -->
     <div class="row">
         {% for recipe in recipes %}
         <div class="col s12 m4 l3">

@@ -1,11 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
 
-
+<!-- Heading -->
 <div class="container">
     <div class="card-panel">
         <h4 class="center-align"><i class="fas fa-user prefix green-text text-accent-3"></i> {{ username }}'s Profile</h4>
     </div>
+<!-- Recipe Card Panels -->
     <div class="row">
         {% for recipe in profile_recipes %}
         <div class="col col s12 m4 l3">

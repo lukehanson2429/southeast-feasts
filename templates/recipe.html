@@ -1,11 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
-
+<!-- Heading -->
 <div class="container">
     <div class="card-panel">
                     <h4 class="center-align"><i class="fas fa-utensils prefix green-text text-accent-3"></i>
             {{ recipe.recipe_name }}</h4>
     </div>
+    <!-- Recipe Data in list -->
     <div class="row recipe-list">
         <div class="col s12 m8">
             <ul>
@@ -38,11 +39,13 @@
                 </li>
             </ul>
         </div>
+        <!-- Recipe Image URL -->
         <div class="col s12 m4">
             <img class="responsive-img" src="{{ recipe.image_url }}" alt="{{ recipe.recipe_name }}">
         </div>
     </div>
     <hr>
+    <!-- Ingredients in List -->
     <div class="row">
         <div class="col s12 m4">
             <h4 class="center-align"><i class="fas fa-list-ol green-text text-accent-3"></i> Ingredients</h4>
@@ -52,6 +55,7 @@
                 {% endfor %}
             </ul>
         </div>
+        <!-- Method in List -->
         <div class="col s12 m7 offset-m1">
             <h4 class="center-align"><i class="fas fa-comments prefix green-text text-accent-3"></i> Method</h4>
             <ul class="ingredients-list">
@@ -61,6 +65,7 @@
             </ul>
         </div>
     </div>
+    <!-- Button for URL to all recipes -->
     <div class="row">
         <div class="col s12 center-align">
     <a href="{{ url_for('get_recipes', country='South East Asia') }}" class="btn-large green accent-3 text-shadow"><i class="fas fa-arrow-left"></i> All Recipes</a>

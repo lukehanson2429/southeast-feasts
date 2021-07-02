@@ -87,6 +87,11 @@ hr {
     width: 100px;
     height: 100px;
 }
+/*--- Padding - index.html ---*/
+.home-padding {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
 
 /*--- Recipes Cards styling - index/recipes/profile.html ---*/
 .card-image {
@@ -110,12 +115,7 @@ hr {
 .btn-large {
     margin: 5px;
 }
-
-.home-padding {
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-
+/*--- Headings - recipes.html  ---*/
 .country-heading {
     padding-top: 20px;
     padding-bottom: 0px;
@@ -126,6 +126,7 @@ hr {
     margin-top: 8px;
 }
 
+/*--- Flash Messages  ---*/
 .flashes {
     line-height: 2;
     color: #ce3434;
