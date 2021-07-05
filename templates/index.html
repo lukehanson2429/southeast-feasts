@@ -36,17 +36,17 @@
                 <div class="card-image">
                     <img class="materialboxed" src="{{ recipe.image_url }}" alt="{{ recipe.recipe_name }}">
                 </div>
+                <div><a href="{{ url_for('recipe_description', recipe_id=recipe._id) }}">
                 <h6 class="recipe-name text-shadow white-text green accent-3">{{ recipe.recipe_name }}</h6>
-                <div class="card-content">
+                <div class="card-content black-text">
+                    
                     <p>Country: {{ recipe.country }}</p>
                     <br>
                     <strong>Created By: {{ recipe.created_by }}</strong><br>
                     <em>Created date: {{ recipe.created_date }}</em>
-                </div>
-                <div class="card-action center-align">
-                    <a href="{{ url_for('recipe_description', recipe_id=recipe._id) }}" class="btn-small green accent-3 text-shadow">Recipe</a>
-                </div>
+                </div></a>
             </div>
+        </div>
         </div>
         {% endfor %}
     </div>
