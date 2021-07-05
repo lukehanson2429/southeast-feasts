@@ -21,11 +21,15 @@ body {
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 
-/*--- Recipes dropdown Navbar styling ---*/
+/*--- Navbar styling base.html ---*/
 ul.dropdown-content li a {
     color: black;
     font-weight: 100;
     text-shadow: none;
+}
+
+a.brand-logo {
+    padding-left: 10px;
 }
 
 /*--- hr styling - index.html ---*/
@@ -209,3 +213,10 @@ hr {
         margin-top: 20px;
     }
 }
+
+@media (max-width: 526px) {
+    a.brand-logo {
+        font-size: 22px;
+    }
+}
+
