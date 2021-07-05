@@ -78,6 +78,10 @@ hr {
     overflow: visible;
     margin-left: 121px;
 }
+
+.carousel-position {
+    margin: 0 auto;
+}
 /*--- Logo - index.html ---*/
 .logo-box {
     color: white;
