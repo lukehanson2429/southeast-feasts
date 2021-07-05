@@ -19,7 +19,16 @@ mongo = PyMongo(app)
 COUNTRY_FLAGS = {
     "south east asia": "https://upload.wikimedia.org/wikipedia/en/thumb/8/87/Flag_of_ASEAN.svg/510px-Flag_of_ASEAN.svg.png",
     "thailand": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Flag_of_Thailand.svg/510px-Flag_of_Thailand.svg.png",
-    "cambodia": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Flag_of_Cambodia.svg/510px-Flag_of_Cambodia.svg.png"
+    "cambodia": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Flag_of_Cambodia.svg/510px-Flag_of_Cambodia.svg.png",
+    "vietnam": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Vietnam.svg/500px-Flag_of_Vietnam.svg.png",
+    "laos": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Flag_of_Laos.svg/510px-Flag_of_Laos.svg.png",
+    "indonesia": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Flag_of_Indonesia.svg/510px-Flag_of_Indonesia.svg.png",
+    "malaysia": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Flag_of_Malaysia.svg/510px-Flag_of_Malaysia.svg.png",
+    "philippines": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Flag_of_the_Philippines.svg/510px-Flag_of_the_Philippines.svg.png",
+    "singapore": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Flag_of_Singapore.svg/510px-Flag_of_Singapore.svg.png",
+    "myanmar": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Flag_of_Myanmar.svg/510px-Flag_of_Myanmar.svg.png",
+    "east timor": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Flag_of_East_Timor.svg/510px-Flag_of_East_Timor.svg.png",
+    "brunei": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Flag_of_Brunei.svg/510px-Flag_of_Brunei.svg.png"
 }
 
 @app.route("/")
@@ -92,7 +101,7 @@ def recipes():
     """Show recipes for each country of origin"""
     country = request.args.get("country")
     query = request.args.get("query")
-    country = country if country else "South East Asia"
+    country = country if country else "south east asia"
     country = country.lower()
     if country in COUNTRY_FLAGS:
         flags = COUNTRY_FLAGS[country]
