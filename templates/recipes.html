@@ -43,7 +43,7 @@
                     <img class="materialboxed" src="{{ recipe.image_url }}" alt="{{ recipe.recipe_name }}">
                 </div>
                 <div><a href="{{ url_for('recipe_description', recipe_id=recipe._id) }}">
-                <h6 class="recipe-name text-shadow white-text green accent-3">{{ recipe.recipe_name }}</h6>
+                <p class="recipe-name text-shadow white-text green accent-3">{{ recipe.recipe_name }}</p>
                 <div class="card-content black-text">
                     
                     <p>Country: {{ recipe.country }}</p>
