@@ -1,59 +1,63 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Southeast Feasts - Milestone Project 3
 
-Welcome lukehanson2429,
+[View the live project here.](https://southeast-feasts.herokuapp.com/)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
+## Project Overview
 
-## Gitpod Reminders
+The Project goal is to create a data orientated website to allow the user to find and share recipes with other users. The theme of the website is specifically targeted to an audience interested in South East Asian Cuisine.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+<img src="">
 
-`python3 -m http.server`
+## Project Goals
 
-A blue button should appear to click: _Make Public_,
+* The Website must be fully responsive on all devices.
+* To allow the user to find and share recipes.
+* Clear design presentation which allows the the user to navigate easily.
+* To maximise future maintainability through documentation, code structure and organisation.
+* To allow the user to add, edit and delete recipes through their profile page (CRUD functionality).
+* Admin user will have full visibility of recipes added from other users and will be able to perform CRUD operations on these recipes also.
+* To allow users to search for specific recipes whether that be by Country, ingredient or recipe name.
+* The target users will be for anyone interested in South East Asian Cuisine.
 
-Another blue button should appear to click: _Open Browser_.
+## User Stories
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+### New Users:
 
-A blue button should appear to click: _Make Public_,
+* As a new user what service does this website provide?
+* As a new user how do I register?
+* As a new user how do I discover new recipes by country?
+* As a new user how do I search for specific recipes?
+* As a new user how do I find ingredients list and method to cook the recipe?
 
-Another blue button should appear to click: _Open Browser_.
+### Existing Users:
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+* As an existing user how do I log into my account?
+* As an existing user how do I view my profile?
+* As an existing user how do I share a new recipe?
+* As an existing user how do I edit/delete an existing recipe?
 
-To log into the Heroku toolbelt CLI:
+## Design
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+### 1. Colour Scheme
+* A materalize tropical green - #00e676(green accent-3) has been used as the main background color for the Navbar, Footer, font awesome icons & buttons as asian cuisine has often vibrant greens in the cuisine so ties in with the theme. 
+* The buttons have various colours which match the icon colors which help make it clearly identifable which icon category is associated with each button. Food & drink button - rgba(245, 161, 97, 1), Hostel button - rgba(130, 228, 211, 1);, attractions button - rgba(212, 173, 222, 1); These colors have also been selected so the black text is easy to read.
+* The google maps api color scheme of atlas has been selected as it ties in nicely with the light blue background color.
+* Icons on the map are slightly darker versions of the button colors so they are easily visble on the map.
+* Text is either black or light blue - rgba(225, 254, 251, 1) across the webpage depending on background color.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidently make it public then you can create a new one with _Regenerate API Key_.
+Contrast Checker used to check colors of buttons match with text so its easy to read - [Contrast Checker](https://contrastchecker.com/?c=000000&b=1155dd)
 
-## Updates Since The Instructional Video
+### 2. Typography
+* The font style of Amatic SC has been chosen for the website brand/logo (Explore Siquijor) within the header & footer. This hand drawn web font is designed to give a rustic feel to the website brand.
+* The font style of Neucha has been selected for all other content which is a relaxed style selected to represent the relaxed vibe of the island.
+* All font has a letter spacing of 0.05em to make it easier to read.
+* The fallback fonts across all webpages is sans serif for any reason the main fonts do not import correctly.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+### 3. Imagery
+* 3 different Phillipines images with varying scenery to grab the users attention. On a slow fade in a carousel on landing on the home page.
+* Upon clicking the top tips button an image of someone riding a scooter along a scenic road surrounded by tropical scenery is designed to engage the user to inspire adventure.
+* Background image on opaque overlay on form has been selected as it fits in with the color scheme and shows the beauty of the coastline in the Philippines.
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
----
-
-Happy coding!
+### 4. Icons
+* Arrow icons have been used from [Font Awesome](https://fontawesome.com/v4.7.0/) to make the UX simple to use with interactivity.
+* Icons have been used from [Font Awesome](https://fontawesome.com/v4.7.0/) in the footer for Social Links.
