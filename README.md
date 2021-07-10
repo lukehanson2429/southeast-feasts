@@ -62,3 +62,26 @@ The Project goal is to create a data orientated website to allow the user to fin
 ### 4. Icons
 * Various Font Aewsome icons displayed across the entire site depending on which field you are filling in / which information is being displayed.[Font Awesome](https://fontawesome.com/v4.7.0/).
 
+## WireFrames
+
+Initial Wireframe designs made on Figma:
+
+* [Desktop]() 
+* [Mobile]() 
+
+## Features / User Stories Testing
+
+* Home Page(index.html)
+    * NavBar when new user only Home, Recipes & SignIn/SignUp will display. Therefore a new user to can take a look at the recipes available and sign up if they so choose. - **As a new user how do I register?**
+    * Welcome Section - a small paragraph explaining the purpose of the website. This meets the requirement of the user story - **As a new user what service does this website provide?**
+    * Recently created recipes section - The 4 most recently created recipes, by clicking the the card panel the recipe description will be displayed showing ingredients, method and additional info.
+    * Share & Discover Section - Links to add a new recipe or sign up depending if you are signed in or not by session user. Discover image takes to to all recipe page.
+    * Carousel - displaying South Eastern Asian flags.
+    * Footer - Social Font Awesome Links
+    
+* Recipes Page (recipes.html)
+    * Displays recipes by country by the Navbar dropdown, this will also display appropriate flag within heading. - **As a new user how do I discover new recipes by country?**
+    * Search functionality will allow the user to search by either recipe Name, country or ingredient. - **As a new user how do I search for specific recipes?**
+    * By resetting the search button this will send the user back to all recipes.
+    * Link to recipe description by clicking card panel (recipe.html). Image on Card panel will allow the user to take a closer look at the recipe image. - **As a new user how do I find ingredients list and method to cook the recipe?**
+
