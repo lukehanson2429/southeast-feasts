@@ -40,24 +40,25 @@ The Project goal is to create a data orientated website to allow the user to fin
 
 ### 1. Colour Scheme
 * A materalize tropical green - #00e676(green accent-3) has been used as the main background color for the Navbar, Footer, font awesome icons & buttons as asian cuisine has often vibrant greens in the cuisine so ties in with the theme. 
-* The buttons have various colours which match the icon colors which help make it clearly identifable which icon category is associated with each button. Food & drink button - rgba(245, 161, 97, 1), Hostel button - rgba(130, 228, 211, 1);, attractions button - rgba(212, 173, 222, 1); These colors have also been selected so the black text is easy to read.
-* The google maps api color scheme of atlas has been selected as it ties in nicely with the light blue background color.
-* Icons on the map are slightly darker versions of the button colors so they are easily visble on the map.
-* Text is either black or light blue - rgba(225, 254, 251, 1) across the webpage depending on background color.
-
-Contrast Checker used to check colors of buttons match with text so its easy to read - [Contrast Checker](https://contrastchecker.com/?c=000000&b=1155dd)
+* For the hr the same color green has been used to seperate content.
+* For the recipe cards the same color green has been used for the background color for the recipe name to make the recipe stand out with a white text and text shadow.
+* For the base background color a materlaize light grey (grey lighten-4) has been used so all text is easy to read.
 
 ### 2. Typography
-* The font style of Amatic SC has been chosen for the website brand/logo (Explore Siquijor) within the header & footer. This hand drawn web font is designed to give a rustic feel to the website brand.
-* The font style of Neucha has been selected for all other content which is a relaxed style selected to represent the relaxed vibe of the island.
+* The font style of Be Vietnam has been chosen for all font across the website. The letterforms are clean, modern and straightforward.
 * All font has a letter spacing of 0.05em to make it easier to read.
 * The fallback fonts across all webpages is sans serif for any reason the main fonts do not import correctly.
 
 ### 3. Imagery
-* 3 different Phillipines images with varying scenery to grab the users attention. On a slow fade in a carousel on landing on the home page.
-* Upon clicking the top tips button an image of someone riding a scooter along a scenic road surrounded by tropical scenery is designed to engage the user to inspire adventure.
-* Background image on opaque overlay on form has been selected as it fits in with the color scheme and shows the beauty of the coastline in the Philippines.
+* Home Page - Home Banner at the top of the page of some rice terraces in Indonesia. The greens of the image blend nicely with the materalize green in the Nav Bar to suit the theme. Also rice is a staple across South East Asia so ties in with the recipe theme.
+* Recipe Cards - Image for each recipe shown on recipe cards by inputing the URL when adding a new recipe. Can also Zoom onto the image on click to take a closer look.
+* Home Page - Share recipe image shows people sharing a dish which links to the signup/signin page, If session user is logged in will take you to add recipe page.
+* Home Page - Discover recipe image takes you to all recipe page.
+* Home Page - Materalize Carousel displays country flags for South East Asian Countrys above the footer which fits the theme of the website.
+* Recipes Page - Depending on which country is selected the appropriate flag will display in the heading.
+* SignIn/Sign Up Page - Full Screen background image of a local market it Vietnam with plenty of fresh ingredients. Fits in with the theme of the website.
+* Add/Edit Recipe Page - Full Screen background image of a hot chilli peppers displayed as asian cuisine often is spicy so fits in with the theme.
 
 ### 4. Icons
-* Arrow icons have been used from [Font Awesome](https://fontawesome.com/v4.7.0/) to make the UX simple to use with interactivity.
-* Icons have been used from [Font Awesome](https://fontawesome.com/v4.7.0/) in the footer for Social Links.
+* Various Font Aewsome icons displayed across the entire site depending on which field you are filling in / which information is being displayed.[Font Awesome](https://fontawesome.com/v4.7.0/).
+
