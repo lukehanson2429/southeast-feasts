@@ -175,3 +175,37 @@ of the project to ensure there were no errors/warning within my code. Results be
 * [Jshint maps.js]()
 * [Jshint sendemail.js]()
 * [Jshint constants.js]()
+
+## Credits
+
+### Content
+
+* Recipes from BBC.
+    * [Tofu Fritters](https://www.bbcgoodfood.com/recipes/burmese-tofu-fritters-tohu-jaw)
+    * [Nasi Lemak](https://www.bbc.co.uk/food/recipes/nasi_lemak_58791)
+    * [Nasi Goreng](https://www.bbc.co.uk/food/recipes/nasi_goreng_69542)
+    * [Fish Amok](https://www.bbc.co.uk/food/recipes/nasi_goreng_69542)
+    * [Cheat's Sausage Larb](https://www.bbcgoodfood.com/recipes/cheats-sausage-larb)
+    * [Pork Adobo](https://www.bbcgoodfood.com/recipes/pork-caramelised-pineapple-adobo)
+    * [Singapore Noodles](https://www.bbcgoodfood.com/recipes/singapore-noodles-0)
+    * [Pad Thai](https://www.bbc.co.uk/food/recipes/pad_thai_36788)
+    * [Beef Pho](https://www.bbcgoodfood.com/recipes/beef-pho)
+
+* All other content written by developer.
+
+### Code
+
+* 
+
+### Media 
+
+* 
+
+
+### Acknowledgements
+
+My Mentor Medale Oluwafemi has been very helpful with Feedback/Guidance.
+
+Slack community for feedback & suggestions.
+
+Code institute with supportive content and Tutor Support.
