@@ -34,7 +34,9 @@ The Project goal is to create a data orientated website to allow the user to fin
 * As an existing user how do I log into my account?
 * As an existing user how do I view my profile?
 * As an existing user how do I share a new recipe?
-* As an existing user how do I edit/delete an existing recipe?
+* As an existing user how do I edit an existing recipe?
+* As an existing user how do I delete an existing recipe?
+* As an existing user how do I view my own recipes that I've added?
 
 ## Design
 
@@ -72,11 +74,11 @@ Initial Wireframe designs made on Figma:
 ## Features / User Stories Testing
 
 * Home Page(index.html)
-    * NavBar when new user only Home, Recipes & SignIn/SignUp will display. Therefore a new user to can take a look at the recipes available and sign up if they so choose. - **As a new user how do I register?**
+    * Materalize NavBar when new user only Home, Recipes & SignIn/SignUp will display. Therefore a new user to can take a look at the recipes available and sign up if they so choose. - **As a new user how do I register?**
     * Welcome Section - a small paragraph explaining the purpose of the website. This meets the requirement of the user story - **As a new user what service does this website provide?**
     * Recently created recipes section - The 4 most recently created recipes, by clicking the the card panel the recipe description will be displayed showing ingredients, method and additional info.
     * Share & Discover Section - Links to add a new recipe or sign up depending if you are signed in or not by session user. Discover image takes to to all recipe page.
-    * Carousel - displaying South Eastern Asian flags.
+    * Materlaize Carousel - displaying South Eastern Asian flags. Custom Jquery also added on top of Materalize initiatiation.
     * Footer - Social Font Awesome Links
     
 * Recipes Page (recipes.html)
@@ -85,3 +87,41 @@ Initial Wireframe designs made on Figma:
     * By resetting the search button this will send the user back to all recipes.
     * Link to recipe description by clicking card panel (recipe.html). Image on Card panel will allow the user to take a closer look at the recipe image. - **As a new user how do I find ingredients list and method to cook the recipe?**
 
+* Sign In/ Sign Up Pages (signin.html/signup.html)
+    * Sign In Page allows an existing user to sign in via a username & Password. - **As an existing user how do I log into my account?**
+    * Sign Up Page allows a new user to register to create an account with new username and password. - **As a new user how do I register?**
+
+* Sign In/ Sign Up Pages (signin.html/signup.html)
+    * Sign In Page allows an existing user to sign in via a username & Password. - **As an existing user how do I log into my account?**
+    * Sign Up Page allows a new user to register to create an account with new username and password. - **As a new user how do I register?**
+    * When user is logged in/registered Home, Recipes, Profile & Add Recipe will be displayed in Navbar as session user is logged in.
+
+* Profile Page (profile.html)
+    * If session user is admin all recipe cards will be displayed otherwise will show appropriate Recipe Cards for session user. - **As an existing user how do I view my own recipes that I've added?**
+    * Edit functionality within recipe cards on profile page to edit recipe. - **As an existing user how do I edit an existing recipe?**
+    * Delete functionality within recipe cards on profile page to delete recipe. Modal pop up when delete button clicked as additional security function. **As an existing user how do I delete an existing recipe?**
+
+* Recipe Description (recipe.html)
+    * Upon clicking any recipe cards through the website the recipe decription will be displayed and all manner of infomation will be available such as Ingredients & Method of Cooking. - **As a new user how do I find ingredients list and method to cook the recipe?**
+
+* Add recipe (add_recipe.html)
+    * Add recipe within the Navbar will allow the session user to add a new recipe. - **As an existing user how do I share a new recipe?**
+    * All fields are required with some having min/max lengths for each field.
+    * Tooltipped info pop ups next to some fields explaing what is required.
+
+* Edit recipe (edit_recipe.html)
+    * Edit recipe accessed via profile page which will take you to the edit recipe page. - **As an existing user how do I edit an existing recipe?**
+    * All fields will be prefilled with current entry from mongodb.
+    * Tooltipped info pop ups next to some fields explaing what is required.
+
+* Other Features
+    * Responsive on all devices
+    * Pop up Modal for delete button.
+    * Custom Jquery so Carousel works approriately.
+    * Jquery Validation code for select field added as explained in Backend Mini Project.
+
+* Features left to implement
+    * Pagination for recipes page when more than 8 recipe cards are displayed (beyond my scope of kn owledge right now).
+    * Newsletter sign up on home page via email js.
+    * Review section to be able to leave comments/rating for recipes viewed when logged in.
+    
