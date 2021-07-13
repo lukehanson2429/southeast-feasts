@@ -71,6 +71,7 @@ Initial Wireframe designs made on Figma:
 * [Desktop]() 
 * [Mobile]() 
 
+
 ## Features / User Stories Testing
 
 * Home Page(index.html)
@@ -125,3 +126,52 @@ Initial Wireframe designs made on Figma:
     * Newsletter sign up on home page via email js.
     * Review section to be able to leave comments/rating for recipes viewed when logged in.
     
+### Languages Used
+
+* [HTML5](https://en.wikipedia.org/wiki/HTML5)
+* [CSS3](https://en.wikipedia.org/wiki/CSS)
+* [Javascript](https://en.wikipedia.org/wiki/JavaScript) 
+* [Python3](https://en.wikipedia.org/wiki/Python_(programming_language)
+
+### Frameworks, Libraries & Programs Used
+
+1. [Materalize](https://materializecss.com/)
+    * Materalize was used to assist with the responsiveness across the entire website.
+2. [Google Fonts](https://fonts.google.com/)
+    * Google fonts were used to import the 'Be Vietnam' font into the style.css file.
+3. [Font Awesome](https://fontawesome.com/)
+    * Font Awesome was used to add icons for aesthetic and UX purposes.
+4. [JQuery](https://jquery.com/)
+    * jQuery used for certain Javascript functions using the materlize initialisation.
+5. [Gitpod](https://www.gitpod.io/)
+    * The Interactive Development Envvironment to code the website. Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
+6. [Github](https://github.com/)
+    * GitHub is used to store the projects code after being pushed from Git.
+7. [Figma](https://www.figma.com/)
+    * This was used to create my wireframe designs for desktop/mobile formats.
+8. [Chrome Dev Tools](https://developer.chrome.com/docs/devtools/)
+    * To assist with debugging code and assessing perforamnce through lighthouse.
+9. [FavIcon](https://favicon.io/favicon-generator/)
+    * Used to make custom Icon for website.
+13. [AmIResponsive](http://ami.responsivedesign.is/)
+    * Used to created mock up of website.
+14. [TinyPNG](https://tinypng.com/)
+    * Used to compress images to increase performance.
+14. [Flask](https://en.wikipedia.org/wiki/Flask_(web_framework))
+    * Micro Web Framework
+14. [MongoDB](https://en.wikipedia.org/wiki/MongoDB)
+    * Database used for the application. MongoDB is a source-available cross-platform document-oriented database program.
+14. [Heroku](https://en.wikipedia.org/wiki/Heroku)
+    * Used to deploy my project.
+
+## Testing - Validation
+
+The W3C Markup Validator, W3C CSS Validator Services, Jshint & Pep8 were used to validate every page 
+of the project to ensure there were no errors/warning within my code. Results below:
+
+* [W3C Markup Validator]()
+* [W3C CSS Validator]()
+* [Jshint main.js]()
+* [Jshint maps.js]()
+* [Jshint sendemail.js]()
+* [Jshint constants.js]()
