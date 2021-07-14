@@ -4,7 +4,7 @@ from flask import (
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
-from werkzeug.security import generate_password_hash,check_password_hash
+from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
 
@@ -17,19 +17,56 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 COUNTRY_FLAGS = {
-    "south east asia": "https://upload.wikimedia.org/wikipedia/en/thumb/8/87/Flag_of_ASEAN.svg/510px-Flag_of_ASEAN.svg.png",
-    "thailand": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Flag_of_Thailand.svg/510px-Flag_of_Thailand.svg.png",
-    "cambodia": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Flag_of_Cambodia.svg/510px-Flag_of_Cambodia.svg.png",
-    "vietnam": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Vietnam.svg/500px-Flag_of_Vietnam.svg.png",
-    "laos": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Flag_of_Laos.svg/510px-Flag_of_Laos.svg.png",
-    "indonesia": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Flag_of_Indonesia.svg/510px-Flag_of_Indonesia.svg.png",
-    "malaysia": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Flag_of_Malaysia.svg/510px-Flag_of_Malaysia.svg.png",
-    "philippines": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Flag_of_the_Philippines.svg/510px-Flag_of_the_Philippines.svg.png",
-    "singapore": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Flag_of_Singapore.svg/510px-Flag_of_Singapore.svg.png",
-    "myanmar": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Flag_of_Myanmar.svg/510px-Flag_of_Myanmar.svg.png",
-    "east timor": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Flag_of_East_Timor.svg/510px-Flag_of_East_Timor.svg.png",
-    "brunei": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Flag_of_Brunei.svg/510px-Flag_of_Brunei.svg.png"
+    "south east asia": ('https://upload.wikimedia.org/'
+                        'wikipedia/en/thumb/8/87/'
+                        'Flag_of_ASEAN.svg/'
+                        '510px-Flag_of_ASEAN.svg.png'),
+    "thailand": ('https://upload.wikimedia.org/'
+                 'wikipedia/commons/thumb/a/a9/'
+                 'Flag_of_Thailand.svg/510px-'
+                 'Flag_of_Thailand.svg.png'),
+    "cambodia": ('https://upload.wikimedia.org/'
+                 'wikipedia/commons/thumb/8/83/'
+                 'Flag_of_Cambodia.svg/510px-'
+                 'Flag_of_Cambodia.svg.png'),
+    "vietnam": ('https://upload.wikimedia.org/'
+                'wikipedia/commons/thumb/2/21/'
+                'Flag_of_Vietnam.svg/500px-'
+                'Flag_of_Vietnam.svg.png'),
+    "laos": ('https://upload.wikimedia.org/'
+             'wikipedia/commons/thumb/5/56/'
+             'Flag_of_Laos.svg/510px-'
+             'Flag_of_Laos.svg.png'),
+    "indonesia": ('https://upload.wikimedia.org/'
+                  'wikipedia/commons/thumb/9/9f/'
+                  'Flag_of_Indonesia.svg/510px-'
+                  'Flag_of_Indonesia.svg.png'),
+    "malaysia": ('https://upload.wikimedia.org/'
+                 'wikipedia/commons/thumb/6/66/'
+                 'Flag_of_Malaysia.svg/510px-'
+                 'Flag_of_Malaysia.svg.png'),
+    "philippines": ('https://upload.wikimedia.org/'
+                    'wikipedia/commons/thumb/9/99/'
+                    'Flag_of_the_Philippines.svg/510px-'
+                    'Flag_of_the_Philippines.svg.png'),
+    "singapore": ('https://upload.wikimedia.org/'
+                  'wikipedia/commons/thumb/4/48/'
+                  'Flag_of_Singapore.svg/510px-'
+                  'Flag_of_Singapore.svg.png'),
+    "myanmar": ('https://upload.wikimedia.org/'
+                'wikipedia/commons/thumb/8/8c/'
+                'Flag_of_Myanmar.svg/510px-'
+                'Flag_of_Myanmar.svg.png'),
+    "east timor": ('https://upload.wikimedia.org/'
+                   'wikipedia/commons/thumb/2/26/'
+                   'Flag_of_East_Timor.svg/510px-'
+                   'Flag_of_East_Timor.svg.png'),
+    "brunei": ('https://upload.wikimedia.org/'
+               'wikipedia/commons/thumb/9/9c/'
+               'Flag_of_Brunei.svg/510px-'
+               'Flag_of_Brunei.svg.png')
 }
+
 
 @app.route("/")
 @app.route("/home")
@@ -69,19 +106,19 @@ def sign_up():
 @app.route("/sign_in", methods=["GET", "POST"])
 def sign_in():
     if request.method == "POST":
-        # check if username exists
+        # check if username exists in db
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
         if existing_user:
             # ensure hashed password matches user input
             if check_password_hash(
-                existing_user["password"], request.form.get("password")):
-                    session["user"] = request.form.get("username").lower()
-                    flash("Welcome, {}".format(request.form.get("username")))
-                    return redirect(url_for(
-                    "profile", username=session["user"]))
-
+                    existing_user["password"], request.form.get("password")):
+                        session["user"] = request.form.get("username").lower()
+                        flash("Welcome, {}".format(
+                            request.form.get("username")))
+                        return redirect(url_for(
+                            "profile", username=session["user"]))
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")
