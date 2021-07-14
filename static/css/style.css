@@ -152,6 +152,10 @@ hr {
 }
 
 /*--- Footer - base.html---*/
+
+.footer-margin {
+    margin: 0 auto;
+}
 .footer-logo img {
     width: 80px;
     height: 80px;
