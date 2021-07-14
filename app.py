@@ -160,9 +160,8 @@ def recipes():
 def search():
     query = request.form.get("query")
     recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
-    flags = mongo.db.countries.find_one({"$text": {"$search": query}})
     return render_template(
-        "recipes.html", recipes=recipes, flags=flags)
+        "recipes.html", recipes=recipes)
 
 
 # find one recipe to show return recipe description
@@ -217,8 +216,7 @@ def add_recipe():
         flash("Recipe Successfully Added!")
         return redirect(url_for('profile', username=session['user']))
 
-    countries = mongo.db.countries.find().sort("country", 1)
-    return render_template("add_recipe.html", countries=countries)
+    return render_template("add_recipe.html")
 
 
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
@@ -242,9 +240,8 @@ def edit_recipe(recipe_id):
         return redirect(url_for('profile', username=session['user']))
 
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-    countries = mongo.db.countries.find().sort("country", 1)
     return render_template(
-        "edit_recipe.html", recipe=recipe, countries=countries)
+        "edit_recipe.html", recipe=recipe)
 
 
 @app.route("/delete_recipe/<recipe_id>")
