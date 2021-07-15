@@ -69,7 +69,11 @@
            <a href="{{ url_for('recipes', country='South East Asia') }}"><img class="responsive-img circle" src="static/images/discover.jpg" alt="discover"></a>
         </div>
         <div class="col s12 center-align">
+            {% if session.user %}
+            <a href="{{ url_for('profile', username=session['user']) }}" class="btn-small green accent-3 text-shadow">Sign In / Sign Up</a>
+            {% else %}
             <a href="{{ url_for('sign_in') }}" class="btn-small green accent-3 text-shadow">Sign In / Sign Up</a>
+            {% endif %}
         </div>
     </div>
 </div>
