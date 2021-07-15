@@ -100,7 +100,7 @@ def sign_up():
         flash("Sign Up Successful!")
         return redirect(url_for("profile", username=session["user"]))
 
-    return render_template("signup.html")
+    return render_template("/user/signup.html")
 
 
 @app.route("/sign_in", methods=["GET", "POST"])
@@ -129,7 +129,7 @@ def sign_in():
             flash("Incorrect Username and/or Password")
             return redirect(url_for("sign_in"))
 
-    return render_template("signin.html")
+    return render_template("/user/signin.html")
 
 
 # Return recipe & flags by country
@@ -157,7 +157,7 @@ def recipes():
             recipes = list(mongo.db.recipes.find({"$text": {"$search": country}}))
 
     return render_template(
-        "recipes.html", recipes=recipes, country=country, flags=flags)
+        "/recipes/recipes.html", recipes=recipes, country=country, flags=flags)
 
 
 @app.route("/search", methods=["GET", "POST"])
@@ -165,14 +165,14 @@ def search():
     query = request.form.get("query")
     recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
     return render_template(
-        "recipes.html", recipes=recipes)
+        "/recipes/recipes.html", recipes=recipes)
 
 
 # find one recipe to show return recipe description
 @app.route("/recipe_description/<recipe_id>")
 def recipe_description(recipe_id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-    return render_template("recipe.html", recipe=recipe)
+    return render_template("/recipes/recipe.html", recipe=recipe)
 
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
@@ -188,7 +188,7 @@ def profile(username):
             profile_recipes = list(
                 mongo.db.recipes.find({"created_by": session["user"]}))
         return render_template(
-            "profile.html", username=username, profile_recipes=profile_recipes)
+            "/user/profile.html", username=username, profile_recipes=profile_recipes)
     return redirect(url_for("sign_in"))
 
 
@@ -220,7 +220,7 @@ def add_recipe():
         flash("Recipe Successfully Added!")
         return redirect(url_for('profile', username=session['user']))
 
-    return render_template("add_recipe.html")
+    return render_template("/recipes/add_recipe.html")
 
 
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
@@ -245,7 +245,7 @@ def edit_recipe(recipe_id):
 
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     return render_template(
-        "edit_recipe.html", recipe=recipe)
+        "/recipes/edit_recipe.html", recipe=recipe)
 
 
 @app.route("/delete_recipe/<recipe_id>")
@@ -253,6 +253,12 @@ def delete_recipe(recipe_id):
     mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
     flash("Recipe Successfully Deleted")
     return redirect(url_for('profile', username=session['user']))
+
+
+@app.errorhandler(404)
+def page_not_found(e):
+    # note that we set the 404 status explicitly
+    return render_template('404.html'), 404
 
 
 if __name__ == "__main__":
