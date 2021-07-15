@@ -171,10 +171,9 @@ of the project to ensure there were no errors/warning within my code. Results be
 
 * [W3C Markup Validator]()
 * [W3C CSS Validator]()
-* [Jshint main.js]()
-* [Jshint maps.js]()
-* [Jshint sendemail.js]()
-* [Jshint constants.js]()
+* [Jshint script.js]()
+* [PEP8 app.py]()
+
 
 ## Credits
 

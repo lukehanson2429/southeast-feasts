@@ -144,13 +144,17 @@ def recipes():
         flags = COUNTRY_FLAGS[country]
     else:
         flags = COUNTRY_FLAGS["south east asia"]
-
+    
     if query:
         if (query.lower() in COUNTRY_FLAGS) and COUNTRY_FLAGS[query.lower()]:
             flags = COUNTRY_FLAGS[query.lower()]
+            country = query
         recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
     else:
-        recipes = list(mongo.db.recipes.find({"$text": {"$search": country}}))
+        if country == "south east asia":
+            recipes = list(mongo.db.recipes.find())
+        else:
+            recipes = list(mongo.db.recipes.find({"$text": {"$search": country}}))
 
     return render_template(
         "recipes.html", recipes=recipes, country=country, flags=flags)
