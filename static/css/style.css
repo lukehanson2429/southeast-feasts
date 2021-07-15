@@ -125,14 +125,12 @@ hr {
     margin: 5px;
 }
 /*--- Headings - recipes.html  ---*/
-.country-heading {
+.heading {
     padding-top: 20px;
-    padding-bottom: 0px;
-    margin-bottom: 0px;
 }
 
 .country-flag {
-    margin-top: 8px;
+    margin-top: 15px;
 }
 
 /*--- Flash Messages  ---*/
