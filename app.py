@@ -255,10 +255,20 @@ def delete_recipe(recipe_id):
     return redirect(url_for('profile', username=session['user']))
 
 
+@app.errorhandler(403)
+def page_forbidden(e):
+    return render_template("/error_handlers/403.html"), 403
+
+
 @app.errorhandler(404)
 def page_not_found(e):
-    # note that we set the 404 status explicitly
-    return render_template('404.html'), 404
+    # if page not found 404 error page will render
+    return render_template("/error_handlers/404.html"), 404
+
+
+@app.errorhandler(500)
+def page_server_error(e):
+    return render_template("/error_handlers/500.html"), 500
 
 
 if __name__ == "__main__":

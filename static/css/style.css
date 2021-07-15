@@ -52,8 +52,8 @@ hr {
     z-index: 10;
 }
 
-/*--- Image - signin/up.html ---*/
-.sign-bg-img {
+/*--- Image - signin/up.html,error handlers ---*/
+.sign-bg-img, .error-img {
     height: 100vh;
 
     background: url("../images/signin-up.jpg") no-repeat center center fixed;
