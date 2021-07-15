@@ -33,7 +33,8 @@
                             <p>Are you sure you want to delete this recipe?</p>
                         </div>
                         <div class="modal-footer">
-                            <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn-small red darken-1 text-shadow">Delete</a>
+                            <a href="{{ url_for('profile', username=session['user']) }}" class="btn-small green accent-3 text-shadow left">Back</a>
+                            <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn-small red darken-1 text-shadow right">Delete</a>
                         </div>
                     </div>
                 </div>
