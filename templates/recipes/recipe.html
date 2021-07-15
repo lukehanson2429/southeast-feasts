@@ -63,12 +63,10 @@
                 <li><i class="fas fa-comment green-text text-accent-3"></i> {{ method }}</li>
                 {% endfor %}
             </ul>
-        </div>
-    </div>
-    <!-- Button for URL to all recipes -->
-    <div class="row">
-        <div class="col s12 center-align">
-    <a href="{{ url_for('recipes', country='South East Asia') }}" class="btn-large green accent-3 text-shadow"><i class="fas fa-arrow-left"></i> All Recipes</a>
+            <!-- Button for URL to all recipes -->
+            <div class="col s12 center-align">
+                <a href="{{ url_for('recipes', country='South East Asia') }}" class="btn-large green accent-3 text-shadow"><i class="fas fa-hand-point-left"></i> Return to All Recipes</a>
+                    </div>
         </div>
     </div>
 </div>
