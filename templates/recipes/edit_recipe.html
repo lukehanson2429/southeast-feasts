@@ -9,6 +9,7 @@
                 <div class="input-field col s12">
                     <i class="fas fa-globe-asia prefix green-text text-accent-3"></i>
                     <select id="country" name="country" class="validate" required>
+                        <option value="" disabled selected>{{ recipe.country }}</option>
                         {% for country in countries %}
                             {% if recipe.country == country %}
                                 <option value="{{ recipe.country }}" selected>{{ recipe.country }}</option>
