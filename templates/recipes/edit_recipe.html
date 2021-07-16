@@ -9,18 +9,13 @@
                 <div class="input-field col s12">
                     <i class="fas fa-globe-asia prefix green-text text-accent-3"></i>
                     <select id="country" name="country" class="validate" required>
-                        <option placeholder="{{ recipe.country }}" selected disabled hidden></option>
-                        <option value="Brunei">Brunei</option>
-                        <option value="Cambodia">Cambodia</option>
-                        <option value="East Timor">East Timor</option>
-                        <option value="Indonesia">Indonesia</option>
-                        <option value="Laos">Laos</option>
-                        <option value="Malaysia">Malaysia</option>
-                        <option value="Myanmar">Myanmar</option>
-                        <option value="Philippines">Philippines</option>
-                        <option value="Singapore">Singapore</option>
-                        <option value="Thailand">Thailand</option>
-                        <option value="Vietnam">Vietnam</option>
+                        {% for country in countries %}
+                            {% if recipe.country == country %}
+                                <option value="{{ recipe.country }}" selected>{{ recipe.country }}</option>
+                            {% else %}
+                                <option value="{{ country }}">{{ country }}</option>
+                            {% endif %}
+                        {% endfor %}
                     </select>
                     <label for="country">Country</label>
                 </div>

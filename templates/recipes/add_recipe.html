@@ -10,17 +10,9 @@
                     <i class="fas fa-globe-asia prefix green-text text-accent-3"></i>
                     <select id="country" name="country" class="validate" required>
                         <option value="" disabled selected>Choose Country</option>
-                        <option value="Brunei">Brunei</option>
-                        <option value="Cambodia">Cambodia</option>
-                        <option value="East Timor">East Timor</option>
-                        <option value="Indonesia">Indonesia</option>
-                        <option value="Laos">Laos</option>
-                        <option value="Malaysia">Malaysia</option>
-                        <option value="Myanmar">Myanmar</option>
-                        <option value="Philippines">Philippines</option>
-                        <option value="Singapore">Singapore</option>
-                        <option value="Thailand">Thailand</option>
-                        <option value="Vietnam">Vietnam</option>
+                        {% for country in countries %}
+                            <option value="{{ country }}">{{ country }}</option>
+                        {% endfor %}
                     </select>
                     <label for="country">Country</label>
                 </div>
