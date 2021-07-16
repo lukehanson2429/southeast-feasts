@@ -85,8 +85,9 @@ hr {
 
 .carousel-position {
     margin: 0 auto;
-    overflow: clip;
+    overflow: hidden;
 }
+
 /*--- Logo - index.html ---*/
 .logo-box {
     color: white;
