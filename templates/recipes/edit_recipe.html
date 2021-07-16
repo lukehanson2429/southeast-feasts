@@ -9,7 +9,7 @@
                 <div class="input-field col s12">
                     <i class="fas fa-globe-asia prefix green-text text-accent-3"></i>
                     <select id="country" name="country" class="validate" required>
-                        <option value="{{ recipe.country }}" Selected>{{ recipe.country }}</option>
+                        <option placeholder="{{ recipe.country }}" selected disabled hidden></option>
                         <option value="Brunei">Brunei</option>
                         <option value="Cambodia">Cambodia</option>
                         <option value="East Timor">East Timor</option>
@@ -47,7 +47,7 @@
                 <div class="input-field col s12">
                     <i class="fas fa-users prefix green-text text-accent-3"></i>
                     <select id="serves" name="serves" class="validate" required>
-                        <option value="{{ recipe.serves }}"selected>{{ recipe.serves }}</option>
+                        <option value="{{ recipe.serves }}" selected>{{ recipe.serves }}</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
