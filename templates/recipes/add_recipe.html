@@ -36,20 +36,16 @@
                         data-tooltip="Short description of the recipe, up to 100 characters inc spaces. As an example the description of a Thai Green Curry could be the following: Thai green curry is a variety of curry from Thailand using coconut milk and fresh green chillies."></i>
                 </div>
                 <!-- Serves field dropdown-->
-                <div class="input-field col s12">
+                <div class="input-field col s11">
                     <i class="fas fa-users prefix green-text text-accent-3"></i>
-                    <select id="serves" name="serves" class="validate" required>
-                        <option value="" disabled selected>Serves how many?</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                    </select>
+                    <input id="serves" name="serves" type="text" maxlength="1"
+                            pattern="^[1-8][0-8]*$" class="validate" required>
                     <label for="serves">Serves</label>
+                </div>
+                <!-- Serves field Pop Up-->
+                <div class="col s1">
+                    <i class="fas fa-info fa-2x tooltipped green-text text-accent-3" data-position="left"
+                        data-tooltip="Enter Number Between 1 & 8"></i>
                 </div>
                 <!-- image url field-->
                 <div class="input-field col s11">
