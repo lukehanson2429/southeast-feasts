@@ -67,6 +67,10 @@ COUNTRY_FLAGS = {
                'Flag_of_Brunei.svg.png')
 }
 
+COUNTRIES = list(COUNTRY_FLAGS)
+COUNTRIES.pop(0)
+COUNTRIES = [COUNTRY.capitalize() for COUNTRY in COUNTRIES]
+
 
 @app.route("/")
 @app.route("/home")
@@ -221,7 +225,8 @@ def add_recipe():
         flash("Recipe Successfully Added!")
         return redirect(url_for('profile', username=session['user']))
 
-    return render_template("/recipes/add_recipe.html")
+    countries = COUNTRIES
+    return render_template("/recipes/add_recipe.html", countries=countries)
 
 
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
@@ -245,8 +250,9 @@ def edit_recipe(recipe_id):
         return redirect(url_for('profile', username=session['user']))
 
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    countries = COUNTRIES
     return render_template(
-        "/recipes/edit_recipe.html", recipe=recipe)
+        "/recipes/edit_recipe.html", recipe=recipe, countries=countries)
 
 
 @app.route("/delete_recipe/<recipe_id>")
