@@ -16,6 +16,7 @@ app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
+# Dictionary with key of countries with value of Country Flags
 COUNTRY_FLAGS = {
     "south east asia": ('https://upload.wikimedia.org/'
                         'wikipedia/en/thumb/8/87/'
@@ -66,9 +67,11 @@ COUNTRY_FLAGS = {
                'Flag_of_Brunei.svg/510px-'
                'Flag_of_Brunei.svg.png')
 }
-
+# List of Countries
 COUNTRIES = list(COUNTRY_FLAGS)
+# South East Asia Removed
 COUNTRIES.pop(0)
+# Countries First Letter capitalized
 COUNTRIES = [COUNTRY.capitalize() for COUNTRY in COUNTRIES]
 
 
@@ -85,10 +88,10 @@ def get_home():
 @app.route("/sign_up", methods=["GET", "POST"])
 def sign_up():
     if request.method == "POST":
-        # check if username exists
+        # Check if username exists
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
-
+        # Displays flash message if exists
         if existing_user:
             flash("Username already exists!")
             return redirect(url_for("sign_up"))
@@ -142,29 +145,36 @@ def recipes():
     """Show recipes for each country of origin"""
     country = request.args.get("country")
     query = request.args.get("query")
+    """If country is country otherwise show south east asia"""
     country = country if country else "south east asia"
+    """lower case country"""
     country = country.lower()
+    """if country is in country flags display
+    correct flag otherwise south east asia flag"""
     if country in COUNTRY_FLAGS:
         flags = COUNTRY_FLAGS[country]
     else:
         flags = COUNTRY_FLAGS["south east asia"]
-
+    """When searching countries display correct flag"""
     if query:
         if (query.lower() in COUNTRY_FLAGS) and COUNTRY_FLAGS[query.lower()]:
             flags = COUNTRY_FLAGS[query.lower()]
             country = query
+            """Find recipes for search query either ingredient or recipe name"""
         recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
     else:
+        """If country is south east asia display all recipes"""
         if country == "south east asia":
             recipes = list(mongo.db.recipes.find())
         else:
+            """Otherwise display recipes for country searched"""
             recipes = list(mongo.db.recipes.find(
                 {"$text": {"$search": country}}))
 
     return render_template(
         "/recipes/recipes.html", recipes=recipes, country=country, flags=flags)
 
-
+# Search Function
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
@@ -185,7 +195,8 @@ def profile(username):
     # grab session username from db
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-
+    """If session user is admin display all recipes otherwise
+    only display recipes that session user has created."""
     if session["user"]:
         if session["user"] == "admin":
             profile_recipes = list(mongo.db.recipes.find())
