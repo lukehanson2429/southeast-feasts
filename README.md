@@ -1,12 +1,12 @@
 # Southeast Feasts - Milestone Project 3
 
-[View the live project here.](https://southeast-feasts.herokuapp.com/)
+[View the live project here.](https://southeast-feasts.herokuapp.com/home)
 
 ## Project Overview
 
 The Project goal is to create a data orientated website to allow the user to find and share recipes with other users. The theme of the website is specifically targeted to an audience interested in South East Asian Cuisine.
 
-<img src="">
+![South East Feasts](static/images/southeast-feasts.png)
 
 ## Project Goals
 
