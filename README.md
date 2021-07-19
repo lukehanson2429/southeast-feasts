@@ -68,7 +68,7 @@ The Project goal is to create a data orientated website to allow the user to fin
 
 Initial Wireframe designs made on Figma:
 
-* [Desktop]() 
+* [Desktop](dd) 
 * [Mobile]() 
 
 
