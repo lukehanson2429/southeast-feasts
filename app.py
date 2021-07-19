@@ -160,7 +160,8 @@ def recipes():
         if (query.lower() in COUNTRY_FLAGS) and COUNTRY_FLAGS[query.lower()]:
             flags = COUNTRY_FLAGS[query.lower()]
             country = query
-            """Find recipes for search query either ingredient or recipe name"""
+            """Find recipes for search query
+            either ingredient or recipe name"""
         recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
     else:
         """If country is south east asia display all recipes"""
@@ -173,6 +174,7 @@ def recipes():
 
     return render_template(
         "/recipes/recipes.html", recipes=recipes, country=country, flags=flags)
+
 
 # Search Function
 @app.route("/search", methods=["GET", "POST"])
@@ -199,23 +201,24 @@ def profile(username):
     only display recipes that session user has created."""
     if session["user"]:
         if session["user"] == "admin":
-            profile_recipes = list(mongo.db.recipes.find())
+            recipes = list(mongo.db.recipes.find())
         else:
-            profile_recipes = list(
+            recipes = list(
                 mongo.db.recipes.find({"created_by": session["user"]}))
         return render_template(
-            "/user/profile.html", username=username, profile_recipes=profile_recipes)
+            "/user/profile.html", username=username, recipes=recipes)
     return redirect(url_for("sign_in"))
 
 
 @app.route("/signout")
 def sign_out():
-    # remove user from session cookies
+    # remove user from session cookies & return to Sign In Page
     flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("sign_in"))
 
 
+# Insert new recipe into Mongodb using request POST method
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
     if request.method == "POST":
@@ -235,11 +238,12 @@ def add_recipe():
         mongo.db.recipes.insert_one(recipe)
         flash("Recipe Successfully Added!")
         return redirect(url_for('profile', username=session['user']))
-
+        # Countries Variable - list of Countries
     countries = COUNTRIES
     return render_template("/recipes/add_recipe.html", countries=countries)
 
 
+# Edit recipe into Mongodb using request POST method/targeted by ObjectID
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
     if request.method == "POST":
@@ -261,11 +265,13 @@ def edit_recipe(recipe_id):
         return redirect(url_for('profile', username=session['user']))
 
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    # Countries Variable - list of Countries
     countries = COUNTRIES
     return render_template(
         "/recipes/edit_recipe.html", recipe=recipe, countries=countries)
 
 
+# Delete recipe from Mongodb by targeting ObjectId
 @app.route("/delete_recipe/<recipe_id>")
 def delete_recipe(recipe_id):
     mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
@@ -273,17 +279,19 @@ def delete_recipe(recipe_id):
     return redirect(url_for('profile', username=session['user']))
 
 
+# Error Handler - 403
 @app.errorhandler(403)
 def page_forbidden(e):
     return render_template("/error_handlers/403.html"), 403
 
 
+# Error Handler - 404
 @app.errorhandler(404)
 def page_not_found(e):
-    # if page not found 404 error page will render
     return render_template("/error_handlers/404.html"), 404
 
 
+# Error Handler - 500
 @app.errorhandler(500)
 def page_server_error(e):
     return render_template("/error_handlers/500.html"), 500
