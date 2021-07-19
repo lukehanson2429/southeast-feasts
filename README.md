@@ -117,9 +117,15 @@ Initial Wireframe designs made on Figma:
 
 * Other Features
     * Responsive on all devices
-    * Pop up Modal for delete button.
+    * All fields required on edit/add recipe page.
+    * Pop up Modal for delete button as extra security feature.
+    * Defensive programming used across website so can only access certain sections of the site if you are signed in or not.
     * Custom Jquery so Carousel works approriately.
     * Jquery Validation code for select field added as explained in Backend Mini Project.
+
+* Security Features
+    * Werkzseug security used to store secure passwords with salted hashes and later we will verify entered user password in plaintext against it's password hash to authenticate user.
+    * Debug set to false so code not visible if there is an error within the application. 403, 404 & 500 error pages also included.
 
 * Features left to implement
     * Pagination for recipes page when more than 8 recipe cards are displayed (beyond my scope of kn owledge right now).
@@ -164,16 +170,49 @@ Initial Wireframe designs made on Figma:
 14. [Heroku](https://en.wikipedia.org/wiki/Heroku)
     * Used to deploy my project.
 
-## Testing - Validation
+## Database schema
+
+* MongoDB is the cloud based database service used for the project.
+* There is 2 collections used for the project:
+    * recipes
+    * users
+
+The database structure for recipes is as follows:
+* _id:
+* country:
+* recipe_name:
+* description:
+* serves:
+* image_url:
+* prep_time:
+* cook_time:
+* ingredients:
+* method:
+* created_date:
+* created_by:
+
+The database structure for users is as follows:
+* _id:
+* username:
+* password:
+
+When adding a recipe the created by field will take the data from the session user using the username field in the users collection.
+
+## Testing 
+
+### Validation
 
 The W3C Markup Validator, W3C CSS Validator Services, Jshint & Pep8 were used to validate every page 
-of the project to ensure there were no errors/warning within my code. Results below:
+of the project - No errors found. Results below:
 
-* [W3C Markup Validator]()
-* [W3C CSS Validator]()
-* [Jshint script.js]()
-* [PEP8 app.py]()
+* [W3C CSS Validator](static/readme-docs/validation/CSS-validation.png)
+* [Jshint script.js](static/readme-docs/validation/Jshint-validation.png)
+* [PEP8 app.py](static/readme-docs/validation/PEP8-validation.png)
 
+* W3C Markup Validator used to validate all html across the site. One warning was found, however this is due the the flash message being contained within a jinja template loop.
+
+![HTML Validation](static/readme-docs/validation/HTML-validation.png)
+![HTML Validation-2](static/readme-docs/validation/HTML-validation-2.png)
 
 ## Credits
 
