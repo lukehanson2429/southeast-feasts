@@ -180,7 +180,7 @@ hr {
 
 .recipe-list li {
     margin-top: 30px;
-    border-bottom: 1px solid #00e676;
+    border-bottom: 1px solid #00c853;
     border-radius: 10%;
 }
 
@@ -190,7 +190,7 @@ hr {
 
 .ingredients-list li {
     margin-top: 20px;
-    border-bottom: 1px solid #00e676;
+    border-bottom: 1px solid #00c853;
     border-radius: 10%;
 }
 

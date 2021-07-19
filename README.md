@@ -41,7 +41,7 @@ The Project goal is to create a data orientated website to allow the user to fin
 ## Design
 
 ### 1. Colour Scheme
-* A materalize tropical green - #00e676(green accent-3) has been used as the main background color for the Navbar, Footer, font awesome icons & buttons as asian cuisine has often vibrant greens in the cuisine so ties in with the theme. 
+* A materalize tropical green - (green accent-4) has been used as the main background color for the Navbar, Footer, font awesome icons & buttons as asian cuisine has often vibrant greens in the cuisine so ties in with the theme. 
 * For the hr the same color green has been used to seperate content.
 * For the recipe cards the same color green has been used for the background color for the recipe name to make the recipe stand out with a white text and text shadow.
 * For the base background color a materlaize light grey (grey lighten-4) has been used so all text is easy to read.
@@ -121,6 +121,7 @@ Initial Wireframe designs made on Figma:
     * Pop up Modal for delete button as extra security feature.
     * Defensive programming used across website so can only access certain sections of the site if you are signed in or not.
     * Custom Jquery so Carousel works approriately.
+    * Flash messages showing feedback on actions.
     * Jquery Validation code for select field added as explained in Backend Mini Project.
 
 * Security Features
@@ -137,7 +138,7 @@ Initial Wireframe designs made on Figma:
 * [HTML5](https://en.wikipedia.org/wiki/HTML5)
 * [CSS3](https://en.wikipedia.org/wiki/CSS)
 * [Javascript](https://en.wikipedia.org/wiki/JavaScript) 
-* [Python3](https://en.wikipedia.org/wiki/Python_(programming_language)
+* [Python3](https://en.wikipedia.org/wiki/Python_(programming_language))
 
 ### Frameworks, Libraries & Programs Used
 
@@ -205,14 +206,48 @@ When adding a recipe the created by field will take the data from the session us
 The W3C Markup Validator, W3C CSS Validator Services, Jshint & Pep8 were used to validate every page 
 of the project - No errors found. Results below:
 
-* [W3C CSS Validator](static/readme-docs/validation/CSS-validation.png)
-* [Jshint script.js](static/readme-docs/validation/Jshint-validation.png)
-* [PEP8 app.py](static/readme-docs/validation/PEP8-validation.png)
+* [W3C CSS Validator](static/readme-docs/validation/css-validation.png)
+* [Jshint script.js](static/readme-docs/validation/jshint-validation.png)
+* [PEP8 app.py](static/readme-docs/validation/pep8-validation.png)
 
 * W3C Markup Validator used to validate all html across the site. One warning was found, however this is due the the flash message being contained within a jinja template loop.
 
-![HTML Validation](static/readme-docs/validation/HTML-validation.png)
-![HTML Validation-2](static/readme-docs/validation/HTML-validation-2.png)
+![HTML Validation](static/readme-docs/validation/html-validation.png)
+![HTML Validation-2](static/readme-docs/validation/html-validation-2.png)
+
+### Functionality Testing
+
+* Navbar
+    * Navigation Links operating as they should be and correct Nav Links displaying.
+
+* Recipe Cards
+    * Anchor links takes you to the appropriate recipe decription.
+    * Image expands to full screen on click.
+
+* Search
+    * All search functionality working displaying correct flag/recipes/country title.
+
+* Profile
+    * Displays correct recipes depending on session user.
+    * Admin all recipes displayed.
+
+* Add Recipe/Edit Recipe
+    * All fields required working.
+    * Recipes add/edit to the database all working.
+
+* Buttons/Font Awesome social links
+    * Feedback all working appropriately.
+
+* Sign In/Sign Up
+    * All working, if username exists or password incorrect, flash messages displayed.
+
+* Sign Out 
+    * All working.
+
+### Responsive Design Testing
+
+* The website has been viewed on a variety of devices through chrome dev tools such as Desktop, Laptop, iPhone 6/7/8, moto g4 &ipad/ipad mini all functioning correctly and responsive.
+* Tested on Google Chrome & Mozilla Firefox Browsers all functioning correctly.
 
 ## Credits
 

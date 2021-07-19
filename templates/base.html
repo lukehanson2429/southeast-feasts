@@ -35,7 +35,7 @@
             <li><a href="{{ url_for('recipes', country='Vietnam') }}">Vietnam</a></li>
         </ul>
         <!-- Materalize Navbar -->
-        <nav class="nav-extended text-shadow green accent-3">
+        <nav class="nav-extended text-shadow green accent-4">
             <div class="nav-wrapper">
                 <a href="{{ url_for('get_home') }}" class="brand-logo left">Southeast Feasts</a>
                 <a data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
@@ -90,7 +90,7 @@
         {% with messages = get_flashed_messages() %}
         {% if messages %}
         {% for message in messages %}
-        <h5 class="green accent-3 center-align flashes">{{ message }}</h5>
+        <h5 class="green accent-4 center-align flashes">{{ message }}</h5>
         {% endfor %}
         {% endif %}
         {% endwith %}
@@ -100,7 +100,7 @@
         {% endblock %}
     </main>
     <!-- Footer -->
-    <footer class="page-footer text-shadow green accent-3">
+    <footer class="page-footer text-shadow green accent-4">
         <div class="container">
             <div class="row center-align footer-margin">
                 <div class="col l6 s12 footer-logo">

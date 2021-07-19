@@ -3,7 +3,7 @@
 <!-- Heading -->
 <div class="container">
     <div class="card-panel">
-                    <h4 class="center-align"><i class="fas fa-utensils prefix green-text text-accent-3"></i>
+                    <h4 class="center-align"><i class="fas fa-utensils prefix green-text text-accent-4"></i>
             {{ recipe.recipe_name }}</h4>
     </div>
     <!-- Recipe Data in list -->
@@ -11,30 +11,30 @@
         <div class="col s12 m8">
             <ul>
                 <li>
-                    <h6><i class="fas fa-globe-asia prefix green-text text-accent-3"></i> Country: {{ recipe.country }}
+                    <h6><i class="fas fa-globe-asia prefix green-text text-accent-4"></i> Country: {{ recipe.country }}
                     </h6>
                 </li>
                 <li>
-                    <h6><i class="fas fa-keyboard prefix green-text text-accent-3"></i> Description:
+                    <h6><i class="fas fa-keyboard prefix green-text text-accent-4"></i> Description:
                         {{ recipe.description }}</h6>
                 </li>
                 <li>
-                    <h6><i class="fas fa-users prefix green-text text-accent-3"></i> Serves: {{ recipe.serves }}</h6>
+                    <h6><i class="fas fa-users prefix green-text text-accent-4"></i> Serves: {{ recipe.serves }}</h6>
                 </li>
                 <li>
-                    <h6><i class="fas fa-hourglass-start prefix green-text text-accent-3"></i> Prep time:
+                    <h6><i class="fas fa-hourglass-start prefix green-text text-accent-4"></i> Prep time:
                         {{ recipe.prep_time }}</h6>
                 </li>
                 <li>
-                    <h6><i class="fas fa-hourglass-end prefix green-text text-accent-3"></i> Cook time:
+                    <h6><i class="fas fa-hourglass-end prefix green-text text-accent-4"></i> Cook time:
                         {{ recipe.cook_time }}</h6>
                 </li>
                 <li>
-                    <h6><i class="fas fa-calendar-day prefix green-text text-accent-3"></i> Created Date:
+                    <h6><i class="fas fa-calendar-day prefix green-text text-accent-4"></i> Created Date:
                         {{ recipe.created_date }}</h6>
                 </li>
                 <li>
-                    <h6><i class="fas fa-user prefix green-text text-accent-3"></i> Created By: {{ recipe.created_by }}
+                    <h6><i class="fas fa-user prefix green-text text-accent-4"></i> Created By: {{ recipe.created_by }}
                     </h6>
                 </li>
             </ul>
@@ -48,24 +48,24 @@
     <!-- Ingredients in List -->
     <div class="row">
         <div class="col s12 m4">
-            <h4 class="center-align"><i class="fas fa-list-ol green-text text-accent-3"></i> Ingredients</h4>
+            <h4 class="center-align"><i class="fas fa-list-ol green-text text-accent-4"></i> Ingredients</h4>
             <ul class="ingredients-list">
                 {% for ingredient in recipe.ingredients.split("\r\n") %}
-                <li><i class="fas fa-angle-right green-text text-accent-3"></i> {{ ingredient }}</li>
+                <li><i class="fas fa-angle-right green-text text-accent-4"></i> {{ ingredient }}</li>
                 {% endfor %}
             </ul>
         </div>
         <!-- Method in List -->
         <div class="col s12 m7 offset-m1">
-            <h4 class="center-align"><i class="fas fa-comments prefix green-text text-accent-3"></i> Method</h4>
+            <h4 class="center-align"><i class="fas fa-comments prefix green-text text-accent-4"></i> Method</h4>
             <ul class="ingredients-list">
                 {% for method in recipe.method.split("\r\n") %}
-                <li><i class="fas fa-comment green-text text-accent-3"></i> {{ method }}</li>
+                <li><i class="fas fa-comment green-text text-accent-4"></i> {{ method }}</li>
                 {% endfor %}
             </ul>
             <!-- Button for URL to all recipes -->
             <div class="col s12 center-align">
-                <a href="{{ url_for('recipes', country='South East Asia') }}" class="btn-large green accent-3 text-shadow"><i class="fas fa-hand-point-left"></i> Return to All Recipes</a>
+                <a href="{{ url_for('recipes', country='South East Asia') }}" class="btn-large green accent-4 text-shadow"><i class="fas fa-hand-point-left"></i> Return to All Recipes</a>
                     </div>
         </div>
     </div>

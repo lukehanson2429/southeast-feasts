@@ -21,13 +21,13 @@
         <form action="{{ url_for('recipes') }}" method="GET" class="col s12">
             <div class="div center-align">
                 <div class="input-field col s12 m8">
-                    <i class="fas fa-info fa-2x tooltipped green-text text-accent-3 prefix" data-position="right" data-tooltip="Search by Country, recipe name or ingredient."></i>
+                    <i class="fas fa-info fa-2x tooltipped green-text text-accent-4 prefix" data-position="right" data-tooltip="Search by Country, recipe name or ingredient."></i>
                     <input type="text" name="query" id="query" minlength="3" class="validate" required>
                     <label for="query">Search Recipes</label>
                 </div>
                 <div class="col s12 m4 search-btn">
                     <a href="{{ url_for('recipes', country='South East Asia') }}" class="btn-small red darken-1 text-shadow">Reset</a>
-                    <button type="submit" class="btn-small green accent-3 text-shadow">
+                    <button type="submit" class="btn-small green accent-4 text-shadow">
                         <i class="fas fa-search left"></i>Search
                     </button>
                 </div>
@@ -43,7 +43,7 @@
                     <img class="materialboxed" src="{{ recipe.image_url }}" alt="{{ recipe.recipe_name }}">
                 </div>
                 <div><a href="{{ url_for('recipe_description', recipe_id=recipe._id) }}">
-                <p class="recipe-name text-shadow white-text green accent-3">{{ recipe.recipe_name }}</p>
+                <p class="recipe-name text-shadow white-text green accent-4">{{ recipe.recipe_name }}</p>
                 <div class="card-content black-text">
                     
                     <p>Country: {{ recipe.country }}</p>

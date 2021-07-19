@@ -4,7 +4,7 @@
 <!-- Heading -->
 <div class="container heading">
     <div class="card-panel">
-        <h4 class="center-align"><i class="fas fa-user prefix green-text text-accent-3"></i> {{ username }}'s Profile</h4>
+        <h4 class="center-align"><i class="fas fa-user prefix green-text text-accent-4"></i> {{ username }}'s Profile</h4>
     </div>
 <!-- Recipe Card Panels -->
     <div class="row">
@@ -15,7 +15,7 @@
                     <img class="materialboxed" src="{{ recipe.image_url }}" alt="{{ recipe.recipe_name }}">
                 </div>
                 <div><a href="{{ url_for('recipe_description', recipe_id=recipe._id) }}">
-                <p class="recipe-name text-shadow white-text green accent-3">{{ recipe.recipe_name }}</p>
+                <p class="recipe-name text-shadow white-text green accent-4">{{ recipe.recipe_name }}</p>
                 <div class="card-content black-text">
                     <p>Country: {{ recipe.country }}</p>
                     <br>
@@ -33,7 +33,7 @@
                             <p>Are you sure you want to delete this recipe?</p>
                         </div>
                         <div class="modal-footer">
-                            <a href="{{ url_for('profile', username=session['user']) }}" class="btn-small green accent-3 text-shadow left">Back</a>
+                            <a href="{{ url_for('profile', username=session['user']) }}" class="btn-small green accent-4 text-shadow left">Back</a>
                             <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn-small red darken-1 text-shadow right">Delete</a>
                         </div>
                     </div>

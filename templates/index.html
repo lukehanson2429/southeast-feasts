@@ -37,7 +37,7 @@
                     <img class="materialboxed" src="{{ recipe.image_url }}" alt="{{ recipe.recipe_name }}">
                 </div>
                 <div><a href="{{ url_for('recipe_description', recipe_id=recipe._id) }}">
-                <p class="recipe-name text-shadow white-text green accent-3">{{ recipe.recipe_name }}</p>
+                <p class="recipe-name text-shadow white-text green accent-4">{{ recipe.recipe_name }}</p>
                 <div class="card-content black-text">
                     
                     <p>Country: {{ recipe.country }}</p>
@@ -55,7 +55,7 @@
     <div class="row home-padding">
         <h4 class="center-align black-text">Register today!</h4>
         <div class="col s12 m4 offset-m1 center-align">
-           <h6><i class="fas fa-share green-text text-accent-3"></i> Share Your Recipes</h6>
+           <h6><i class="fas fa-share green-text text-accent-4"></i> Share Your Recipes</h6>
            <br>
            {% if session.user %}
            <a href="{{ url_for('add_recipe') }}"><img class="responsive-img circle" src="static/images/share.jpg" alt="share"></a>
@@ -64,15 +64,15 @@
            {% endif %}
         </div>
         <div class="col s12 m4 offset-m2 center-align">
-           <h6><i class="fas fa-globe-asia green-text text-accent-3"></i> Discover New Recipes</h6>
+           <h6><i class="fas fa-globe-asia green-text text-accent-4"></i> Discover New Recipes</h6>
            <br>
            <a href="{{ url_for('recipes', country='South East Asia') }}"><img class="responsive-img circle" src="static/images/discover.jpg" alt="discover"></a>
         </div>
         <div class="col s12 center-align">
             {% if session.user %}
-            <a href="{{ url_for('profile', username=session['user']) }}" class="btn-small green accent-3 text-shadow">Sign In / Sign Up</a>
+            <a href="{{ url_for('profile', username=session['user']) }}" class="btn-small green accent-4 text-shadow">Sign In / Sign Up</a>
             {% else %}
-            <a href="{{ url_for('sign_in') }}" class="btn-small green accent-3 text-shadow">Sign In / Sign Up</a>
+            <a href="{{ url_for('sign_in') }}" class="btn-small green accent-4 text-shadow">Sign In / Sign Up</a>
             {% endif %}
         </div>
     </div>
