@@ -68,9 +68,9 @@ The Project goal is to create a data orientated website to allow the user to fin
 
 Initial Wireframe designs made on Figma:
 
-* [Desktop](dd) 
-* [Mobile]() 
+* [Southeast Feasts Wireframe Collection](static/readme-docs/wireframes/southeast-feasts.pdf)
 
+Final design similar to original design. Decided to leave out the Newsletter sign up section on the home page.
 
 ## Features / User Stories Testing
 
@@ -299,18 +299,22 @@ else:
             recipes = list(mongo.db.recipes.find())
 ```
 
+### Bugs
+
+* Carousel between footer & Carousel white space occasionally appears. However this a rare occurance.
+
 ## Deployment
 
 - ### Working with the local copy
   1. Install all the requirements: Go to the workspace of your local copy. In the terminal window of your IDE type: pip3 install -r requirements.txt.
-  2. Create a database in MongoDB
-     - Signup or login to your MongoDB account.
+  2. Create a database in MongoDB:
+     - Signup or login to your MongoDB.
      - Create a cluster and a database.
      - Create collections for your application - users & recipes.
-  3. Create the environment variables
+  3. Create the environment variables:
      - Create a .gitignore file in the root directory of the project.
      - Add the env.py file in the .gitignore.
-     - Create the file env.py. This will contain all the envornment variables.
+     - Create the file env.py. This will contain all the environment variables.
         - Import os
         - os.environ.setdefault("IP", "Added by developer")
         - os.environ.setdefault("PORT", "Added by developer")
@@ -319,20 +323,20 @@ else:
         - os.environ.setdefault("MONGO_DBNAME", "Added by developer")
   4. Run the app: Open your terminal window in your IDE. Type python3 app.py and run the app.
 
-  **Env.py file is included within the .gitignore file as they are private and cant be disclosed for security reasons.**
+  **Env.py file is included within the .gitignore file as they are private and can't be disclosed for security reasons.**
   
 - ### Heroku Deployment
-  1. Set up a local workspace for Heroku
-     - In terminal window of your IDE type: pip3 freeze -- local > requirements.txt. (The file is needed for Heroku to know which files to install.)
-     - In terminal window of your IDE type: python app.py > Procfile (The file is needed for Heroku to know which file is needed as an entry point.)
-  2. Set up Heroku: create a Heroku account and create a new app and select your region.
-  3. Deployment method 'Github'
+  1. Set up a local workspace for Heroku:
+     - In terminal of your IDE type: pip3 freeze -- local > requirements.txt. (The file is needed for Heroku to know which files to install.)
+     - In terminal of your IDE type: python app.py > Procfile (The file is needed for Heroku to know which file is needed as an entry point.)
+  2. Set up Heroku: create a Heroku account and create a new app and select your region:
+  3. Deployment method 'Github':
      - Click on the Connect to GitHub section in the deploy tab in Heroku.
        - Search your repository to connect with it.
        - When your repository appears click on connect to connect your repository with the Heroku.
      - Go to the settings app in Heroku and go to Config Vars. Click on Reveal Config Vars.
        - Enter the variables contained in your env.py file (IP, PORT, SECRET_KEY, MONGO_URI, MONGO_DBNAME).
-  4. Push the requirements.txt and Procfile to repository.
+  4. Push the requirements.txt and Procfile to the repository:
      - $ git add requirements.txt
      - $ git commit -m "Add requirements.txt"
      - $ git add Procfile 
@@ -342,10 +346,10 @@ else:
   Heroku will receive the code from Github and host the app using the required packages. Click on Open app in the right corner of your Heroku account. The app wil open and the live link is available from the address bar. 
 
 - ### Forking
-  If you wish to contribute to this website you can Fork it without affecting the main branch by following the procedure outlined below.
+  If you wish to contribute to this website you can Fork it without affecting the main branch by following the procedure outlined below:
   1. Go to the GitHub website and log in.
   2. Locate the [Repository](https://github.com/lukehanson2429/southeast-feasts) used for this project.
-  3. On the right-hand side of the Repository name, you'll see the 'Fork' button. It's located next to the 'Star' and 'Watch' buttons.
+  3. On the right-hand side of the Repository name, you'll see the 'Fork' button. 
   4. This will create a copy in your personal repository.
   5. Once you're finished making changes you can locate the 'New Pull Request' button just above the file listing in the original repository.
 
@@ -378,11 +382,19 @@ else:
 
 ### Code
 
-* 
+* Flask Mini Project helpful guideline for project.
+* W3C Schools/StackOverflow.
 
 ### Media 
 
-* 
+* [Home Page - Banner](https://unsplash.com/photos/yAz5rCf87H8)
+* [Home Page - Logo](https://www.pngwing.com/en/free-png-vueyh)
+* Recipe Cards URL images BBC Good Food.
+* [Home Page - Share](https://unsplash.com/photos/sedJnjrUMM8)
+* [Home Page - Discover](https://unsplash.com/photos/Y11iTVE2DFA)
+* Home Page Carousel Flags from Wikipedia.
+* [Edit/Add Recipe Page - Background](https://unsplash.com/photos/eDDYpOEdyiA)
+* [SignIn/Up Page & Error Pages - Background](https://unsplash.com/photos/QidLrJWXL0o)
 
 
 ### Acknowledgements
