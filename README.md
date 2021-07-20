@@ -6,7 +6,7 @@
 
 The Project goal is to create a data orientated website to allow the user to find and share recipes with other users. The theme of the website is specifically targeted to an audience interested in South East Asian Cuisine.
 
-![South East Feasts](static/images/southeast-feasts.png)
+![South East Feasts](static/readme-docs/images/southeast-feasts.png)
 
 ## Project Goals
 
@@ -179,25 +179,13 @@ Initial Wireframe designs made on Figma:
     * users
 
 The database structure for recipes is as follows:
-* _id:
-* country:
-* recipe_name:
-* description:
-* serves:
-* image_url:
-* prep_time:
-* cook_time:
-* ingredients:
-* method:
-* created_date:
-* created_by:
+<img src="static/readme-docs/images/recipes-data.png" width="20%" height="20%">
 
 The database structure for users is as follows:
-* _id:
-* username:
-* password:
+<img src="static/readme-docs/images/users-data.png" width="20%" height="20%">
 
-When adding a recipe the created by field will take the data from the session user using the username field in the users collection.
+* When adding a recipe the created by field will take the data from the session user using the username field in the users collection.
+* Originally there was also an additional collection for countries which also contained the URL for the country flags. As this data will not change I decided to store this within a dictionary in my app.py file.
 
 ## Testing 
 
@@ -248,6 +236,48 @@ of the project - No errors found. Results below:
 
 * The website has been viewed on a variety of devices through chrome dev tools such as Desktop, Laptop, iPhone 6/7/8, moto g4 &ipad/ipad mini all functioning correctly and responsive.
 * Tested on Google Chrome & Mozilla Firefox Browsers all functioning correctly.
+
+### Lighthouse Report Testing
+
+- Home Page Desktop and Mobile
+
+<img src="static/readme-docs/lighthouse/desktop-lighthouse-home.png" height="120px"/>
+<img src="static/readme-docs/lighthouse/mobile-lighthouse-home.png" height="120px"/>
+
+- Recipes Page Desktop and Mobile
+
+<img src="static/readme-docs/lighthouse/desktop-lighthouse-recipes.png" height="120px"/>
+<img src="static/readme-docs/lighthouse/mobile-lighthouse-recipes.png" height="120px"/>
+
+- Sign In Page Desktop and Mobile
+
+<img src="static/readme-docs/lighthouse/desktop-lighthouse-signin.png" height="120px"/>
+<img src="static/readme-docs/lighthouse/mobile-lighthouse-signin.png" height="120px"/>
+
+- Signup Page Desktop and Mobile
+
+<img src="static/readme-docs/lighthouse/desktop-lighthouse-signup.png" height="120px"/>
+<img src="static/readme-docs/lighthouse/mobile-lighthouse-signup.png" height="120px"/>
+
+- Profile Page Desktop and Mobile
+
+<img src="static/readme-docs/lighthouse/desktop-lighthouse-profile.png" height="120px"/>
+<img src="static/readme-docs/lighthouse/mobile-lighthouse-profile.png" height="120px"/>
+
+- Recipe Description Page Desktop and Mobile
+
+<img src="static/readme-docs/lighthouse/desktop-lighthouse-description.png" height="120px"/>
+<img src="static/readme-docs/lighthouse/mobile-lighthouse-description.png" height="120px"/>
+
+- Add Recipe Page Desktop and Mobile
+   
+<img src="static/readme-docs/lighthouse/desktop-lighthouse-addrecipe.png" height="120px" />
+<img src="static/readme-docs/lighthouse/mobile-lighthouse-addrecipe.png" height="120px" />
+
+- Edit Recipe Page Desktop and Mobile
+   
+<img src="static/readme-docs/lighthouse/desktop-lighthouse-editrecipe.png" height="120px" />
+<img src="static/readme-docs/lighthouse/mobile-lighthouse-editrecipe.png" height="120px" />
 
 ## Credits
 
