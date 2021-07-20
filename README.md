@@ -325,7 +325,7 @@ else:
 
   **Env.py file is included within the .gitignore file as they are private and can't be disclosed for security reasons.**
   
-- ### Heroku Deployment
+### Heroku Deployment
   1. Set up a local workspace for Heroku:
      * In terminal of your IDE type: pip3 freeze -- local > requirements.txt. (The file is needed for Heroku to know which files to install.)
      * In terminal of your IDE type: python app.py > Procfile (The file is needed for Heroku to know which file is needed as an entry point.)
