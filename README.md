@@ -345,7 +345,7 @@ else:
 
   Heroku will receive the code from Github and host the app using the required packages. Click on Open app in the right corner of your Heroku account. The app wil open and the live link is available from the address bar. 
 
-- ### Forking
+### Forking
   If you wish to contribute to this website you can Fork it without affecting the main branch by following the procedure outlined below:
   1. Go to the GitHub website and log in.
   2. Locate the [Repository](https://github.com/lukehanson2429/southeast-feasts) used for this project.
@@ -353,7 +353,7 @@ else:
   4. This will create a copy in your personal repository.
   5. Once you're finished making changes you can locate the 'New Pull Request' button just above the file listing in the original repository.
 
-- ### Cloning 
+### Cloning 
   If you wish to clone or download this repository to your local device you can follow the procedure outlined below.
   1. Go to the GitHub website and log in.
   2. Locate the [Repository](https://github.com/lukehanson2429/southeast-feasts) used for this project.
