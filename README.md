@@ -271,6 +271,34 @@ of the project - No errors found. Results below:
    
 <img src="static/readme-docs/lighthouse/desktop-lighthouse-editrecipe.png" height="120px" /><img src="static/readme-docs/lighthouse/mobile-lighthouse-editrecipe.png" height="120px" />
 
+## Encountered Issues
+
+* White Space at the bottom of the page on home page due to Carousel Item overflowing beyond footer. Set overflow to hidden to resolve.
+
+```
+.carousel-position {
+    margin: 0 auto;
+    overflow: hidden;
+}
+```
+
+* When deleting a recipe through the modal, first recipe in the jinja loop was deleting rather then selected recipe. Data Target & ID matched to fix the issue.
+
+```
+<button data-target="{{ recipe._id }}" class="btn-small red darken-1 text-shadow modal-trigger">Delete</button>
+                    <!-- Modal Structure -->
+                    <div id="{{ recipe._id }}" class="modal">
+```
+
+* All recipes were not displaying when selecting all within recipes dropdown navigation. Else statement added if country == "south east asia"  to find all recipes from the mongodb. Line 166 app.py file.
+
+```
+else:
+        """If country is south east asia display all recipes"""
+        if country == "south east asia":
+            recipes = list(mongo.db.recipes.find())
+```
+
 ## Credits
 
 ### Content
