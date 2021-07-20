@@ -223,3 +223,10 @@ hr {
     }
 }
 
+@media (max-width: 526px) {
+    .sd-padding {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
+
