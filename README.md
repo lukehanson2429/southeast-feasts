@@ -241,43 +241,35 @@ of the project - No errors found. Results below:
 
 - Home Page Desktop and Mobile
 
-<img src="static/readme-docs/lighthouse/desktop-lighthouse-home.png" height="120px"/>
-<img src="static/readme-docs/lighthouse/mobile-lighthouse-home.png" height="120px"/>
+<img src="static/readme-docs/lighthouse/desktop-lighthouse-home.png" height="120px"/><img src="static/readme-docs/lighthouse/mobile-lighthouse-home.png" height="120px"/>
 
 - Recipes Page Desktop and Mobile
 
-<img src="static/readme-docs/lighthouse/desktop-lighthouse-recipes.png" height="120px"/>
-<img src="static/readme-docs/lighthouse/mobile-lighthouse-recipes.png" height="120px"/>
+<img src="static/readme-docs/lighthouse/desktop-lighthouse-recipes.png" height="120px"/><img src="static/readme-docs/lighthouse/mobile-lighthouse-recipes.png" height="120px"/>
 
 - Sign In Page Desktop and Mobile
 
-<img src="static/readme-docs/lighthouse/desktop-lighthouse-signin.png" height="120px"/>
-<img src="static/readme-docs/lighthouse/mobile-lighthouse-signin.png" height="120px"/>
+<img src="static/readme-docs/lighthouse/desktop-lighthouse-signin.png" height="120px"/><img src="static/readme-docs/lighthouse/mobile-lighthouse-signin.png" height="120px"/>
 
 - Signup Page Desktop and Mobile
 
-<img src="static/readme-docs/lighthouse/desktop-lighthouse-signup.png" height="120px"/>
-<img src="static/readme-docs/lighthouse/mobile-lighthouse-signup.png" height="120px"/>
+<img src="static/readme-docs/lighthouse/desktop-lighthouse-signup.png" height="120px"/><img src="static/readme-docs/lighthouse/mobile-lighthouse-signup.png" height="120px"/>
 
 - Profile Page Desktop and Mobile
 
-<img src="static/readme-docs/lighthouse/desktop-lighthouse-profile.png" height="120px"/>
-<img src="static/readme-docs/lighthouse/mobile-lighthouse-profile.png" height="120px"/>
+<img src="static/readme-docs/lighthouse/desktop-lighthouse-profile.png" height="120px"/><img src="static/readme-docs/lighthouse/mobile-lighthouse-profile.png" height="120px"/>
 
 - Recipe Description Page Desktop and Mobile
 
-<img src="static/readme-docs/lighthouse/desktop-lighthouse-description.png" height="120px"/>
-<img src="static/readme-docs/lighthouse/mobile-lighthouse-description.png" height="120px"/>
+<img src="static/readme-docs/lighthouse/desktop-lighthouse-description.png" height="120px"/><img src="static/readme-docs/lighthouse/mobile-lighthouse-description.png" height="120px"/>
 
 - Add Recipe Page Desktop and Mobile
    
-<img src="static/readme-docs/lighthouse/desktop-lighthouse-addrecipe.png" height="120px" />
-<img src="static/readme-docs/lighthouse/mobile-lighthouse-addrecipe.png" height="120px" />
+<img src="static/readme-docs/lighthouse/desktop-lighthouse-addrecipe.png" height="120px" /><img src="static/readme-docs/lighthouse/mobile-lighthouse-addrecipe.png" height="120px" />
 
 - Edit Recipe Page Desktop and Mobile
    
-<img src="static/readme-docs/lighthouse/desktop-lighthouse-editrecipe.png" height="120px" />
-<img src="static/readme-docs/lighthouse/mobile-lighthouse-editrecipe.png" height="120px" />
+<img src="static/readme-docs/lighthouse/desktop-lighthouse-editrecipe.png" height="120px" /><img src="static/readme-docs/lighthouse/mobile-lighthouse-editrecipe.png" height="120px" />
 
 ## Credits
 
